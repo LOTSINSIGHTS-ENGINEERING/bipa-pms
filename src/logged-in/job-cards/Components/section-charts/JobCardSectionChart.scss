@@ -1,0 +1,42 @@
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 700;  // Bold
+  color: #000;  // Black color
+  margin-bottom: 1rem;  // Space below the title
+}
+
+.filter-section {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center; /* Align the label and select elements horizontally */
+  justify-content: flex-start; /* Align the filter to the left */
+
+  label {
+    font-size: 0.9rem; /* Smaller font size */
+    font-weight: 600;
+    color: #333;
+    margin-right: 8px; /* Reduced space between label and select */
+  }
+
+  select {
+    padding: 0.3rem 0.6rem; /* Smaller padding */
+    font-size: 0.9rem; /* Smaller font size */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    width: auto; /* Adjust width to fit content */
+    max-width: 150px; /* Optional: limit the width of the select input */
+
+    &:hover {
+      border-color: #0f1318;
+    }
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+      background-color: #f9f9f9;
+    }
+  }
+}

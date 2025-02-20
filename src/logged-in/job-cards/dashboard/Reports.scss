@@ -1,0 +1,199 @@
+.dashboard-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.uk-margin {
+    margin-bottom: 20px; /* Increased margin for spacing */
+}
+
+.select-filters-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Slight gap to separate the fields visually */
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5cm; /* Sets the spacing between the buttons to 5cm */
+    justify-content: right; /* Centers the buttons horizontally */
+    margin-top: 20px; /* Optional: adds space above the buttons */
+}
+
+.generate-pdf-button {
+    background-color: #3e85bc; /* A vibrant green color */
+    color: #fff;
+    font-size: 14px; /* Adjusted for readability */
+    padding: 10px 20px; /* Adjusted padding for better button size */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px; /* Adjusted width for consistency */
+}
+
+.generate-pdf-button:last-child {
+    margin-right: 0; /* Removes right margin from the last button */
+}
+
+.generate-pdf-button:hover {
+    background-color: #4f61da; /* Slightly darker green for hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.generate-pdf-button:active {
+    background-color:  #4f61da; /* Even darker green for active state */
+    transform: scale(0.98); /* Slight press-down effect */
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column; /* Ensures label and select are stacked vertically */
+    width: 100%; /* Adjusts each filter to have consistent width */
+    margin-right: 0.5rem;
+}
+
+.uk-form-label {
+    margin-bottom: 0.5rem; /* Spaces the label from the select field */
+    text-align: left; /* Aligns label with select */
+}
+
+.uk-form-label {
+    font-weight: bold;
+    color: #555;
+    font-size: 1em;
+    display: block; /* Ensures the label stays on top */
+    margin-bottom: 8px; /* Adds spacing between label and select input */
+}
+
+.single-select-container {
+    display: block; /* Aligns the select box below the label */
+
+    .single-select {
+        width: 200px; /* Smaller width for the select box */
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #333;
+        margin-top: 5px; /* Adds a small margin to the top of the select */
+        display: block; /* Ensures it takes full width in its container */
+
+        &:focus {
+            border-color: #888;
+            outline: none;
+        }
+    }
+}
+
+.uk-overflow-auto {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.uk-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+
+    &-striped tbody tr:nth-child(odd) {
+        background-color: #f3f3f3;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+        font-weight: bold;
+        color: #444;
+        background-color: #f1f1f1;
+    }
+
+    td {
+        color: #333;
+    }
+}
+
+.job-card-stats {
+    h3 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    p {
+        margin: 5px 0;
+        font-size: 1em;
+        color: #666;
+    }
+}
+
+.toolbar-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+
+    .toolbar {
+        button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #0055a5;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+
+            &:hover {
+                background-color: #0e1011;
+            }
+        }
+    }
+}
+.card-section {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 50px; /* Reduced card width */
+    padding: 10px; /* Reduced padding */
+    font-size: 0.9em; /* Smaller font size */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional: lighter shadow */
+}
+
+
+.chart-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    width: 50px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.chart-card h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,92 @@
+/* General Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.deleted-transactions-tabs {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black; /* Black background for the entire tab container */
+  padding: 5px; /* Add some padding for spacing */
+}
+
+.deleted-tabs {
+  display: flex;
+  position: relative;
+  border: 2px solid #3c4ea0; /* Blue border */
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 20px; /* High number for pill effect */
+  width: 500px;
+  height: 40px; /* Smaller height for a more compact look */
+  background-color: black; /* Set tab background to black */
+}
+
+input[type="radio"] {
+  display: none; /* Hide radio buttons */
+}
+
+.deleted-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Full height of the parent container */
+  width: 250px; /* Fixed width for each tab */
+  font-size: 16px; /* Smaller font size */
+  font-weight: 700;
+  border-radius: 22px; /* Rounded corners for each tab */
+  color: rgba(255, 255, 255, 0.7); /* Lighter text for inactive tabs */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+.deleted-tab.active {
+  color: white; /* Active tab has white color */
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 0.75rem;
+  border-radius: 50%;
+  background-color: blue;
+  color: whitesmoke;
+  transition: 0.15s ease-in;
+}
+
+input[type="radio"]:checked ~ .deleted-tab {
+  color: white; /* Change font color to white when tab is selected */
+}
+
+input[id="recently-created"]:checked ~ .deleted-glider {
+  transform: translateX(0);
+}
+
+input[id="customer-rating"]:checked ~ .deleted-glider {
+  transform: translateX(100%);
+}
+
+.deleted-glider {
+  position: absolute;
+  display: flex;
+  height: 40px;
+  width: 250px;
+  background-color: black; /* Black background for glider */
+  color: #fff;
+  z-index: 1;
+  border-radius: 17px; /* Rounded corners for glider effect */
+  transition: 0.25s ease-out;
+}
+
+@media (max-width: 700px) {
+  .deleted-tabs {
+    transform: scale(0.8); /* Slightly scale down tabs on smaller screens */
+  }
+}

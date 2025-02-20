@@ -1,0 +1,22 @@
+@import "../../../shared/styles/Variables.scss";
+
+.strategy-tab-content {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .title {
+      margin: 0;
+    }
+
+    select {
+      &#category {
+        width: 200px;
+      }
+      &#count {
+        width: 50px;
+      }
+    }
+  }
+}

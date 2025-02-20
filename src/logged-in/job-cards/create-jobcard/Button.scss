@@ -1,0 +1,14 @@
+// Button.scss
+
+.blue-button {
+  background-color:  #0f1011;
+  color: white;
+  border: none;
+  border-radius: 15px; /* Adjust as needed */
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.blue-button:hover {
+  background-color: #4c7295;
+}

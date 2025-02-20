@@ -1,0 +1,47 @@
+/* Reset box-sizing for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #c2bcbc; /* Grey background for inactive tabs */
+  border-radius: 20px; /* Rounded corners for the tab container */
+  border: 1px solid #d8d8d8; /* Black border around the tab container */
+  overflow: hidden; /* Ensures rounded corners are respected */
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 5px; /* Space between tabs */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  background-color: #ccc; /* Grey background for inactive tabs */
+  color: #333; /* Dark grey text color for inactive tabs */
+  border-radius: 20px; /* Rounded corners for each tab */
+}
+
+.tab.active {
+  background-color: #000; /* Black background for the active tab */
+  color: #fff; /* White text for the active tab */
+}
+
+.tab:hover {
+  background-color: #bbb; /* Light grey background on hover */
+}
+
+.tab-container .tab:first-child {
+  margin-left: 0; /* Remove left margin on the first tab */
+}
+
+.tab-container .tab:last-child {
+  margin-right: 0; /* Remove right margin on the last tab */
+}

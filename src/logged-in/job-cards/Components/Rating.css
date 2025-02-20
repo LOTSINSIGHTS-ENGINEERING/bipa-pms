@@ -1,0 +1,27 @@
+.rating {
+  display: flex;
+}
+
+.rating button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.rating button .star {
+  font-size: 1.5rem; /* Adjust the size of the stars here */
+  color: lightgray; /* Default color */
+}
+
+
+.rating-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  /* border-radius: 5px; */
+}

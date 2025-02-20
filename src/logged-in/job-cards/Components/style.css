@@ -1,0 +1,27 @@
+/* styles.css */
+.fixed-height-table {
+  height: 300px; /* Adjust the height as needed */
+  overflow-y: auto;
+  display: block;
+}
+
+.fixed-height-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.uk-table th, .uk-table td {
+  padding: 4px 8px; /* Reduce padding */
+  font-size: 12px; /* Reduce font size */
+}
+
+.uk-container h2, .uk-container p, .uk-container h3 {
+  margin: 8px 0; /* Reduce margin */
+  font-size: 14px; /* Adjust font size for headers */
+}
+
+.uk-card {
+  margin: 20px 0; /* Add some margin around the card */
+  padding: 20px;
+}

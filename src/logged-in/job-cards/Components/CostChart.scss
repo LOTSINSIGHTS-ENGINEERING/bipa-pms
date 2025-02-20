@@ -1,0 +1,40 @@
+.cost-chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.doughnut-chart {
+  position: relative;
+  width: 150px; /* Make the chart smaller */
+  height: 150px;
+}
+
+.chart-middle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.chart-middle-text div {
+  margin: 5px 0;
+}
+
+/* Style for the BarChart and container */
+.uk-grid-match {
+  gap: 20px; /* Adds space between the charts */
+}
+
+// .uk-width-1-2@m {
+//   padding: 10px;
+// }

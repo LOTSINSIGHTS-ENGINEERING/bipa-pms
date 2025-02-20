@@ -1,0 +1,175 @@
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.transaction-tabs {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .tabs {
+    display: flex;
+    position: relative;
+    // background-color: gray;
+    // box-shadow: 0 0 1px 0 rgba(blue, 0.15),
+    //   0 6px 12px 0 white;
+    border-radius: 20px; // just a high number to create pill effect
+
+    * {
+      z-index: 2;
+    }
+
+    height: 30px;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 15rem;
+    font-size: 20px;
+    font-weight: 600;
+    // font-family: "Inter";
+    color: whitesmoke;
+     color: black;
+    border-radius: 20px !important; // just a high number to create pill effect
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+  }
+
+  .notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-left: 0.75rem;
+    border-radius: 50%;
+    background-color: white;
+    color:white;
+    transition: 0.15s ease-in;
+  }
+
+  input[type="radio"]:checked {
+    /* Styles for the checked radio button */
+    color: white !important;
+  }
+
+  input[id="client-tab"] {
+    &:checked {
+      &~.glider {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  // input[id="allocated-tab"] {
+  //   &:checked {
+  //     &~.glider {
+  //       transform: translateX(400%);
+  //     }
+  //   }
+  // }
+
+  input[id="sections-tab"] {
+    &:checked {
+      &~.glider {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  input[id="team-members-tab"] {
+    &:checked {
+      &~.glider {
+        transform: translateX(200%);
+      }
+    }
+  }
+
+  // input[id="request-source-of-funds-tab"] {
+  //   &:checked {
+  //     &~.glider {
+  //       transform: translateX(600%);
+  //     }
+  //   }
+  // }
+
+  input[id="division-tab"] {
+    &:checked {
+      &~.glider {
+        transform: translateX(300%);
+      }
+    }
+  }
+
+  // input[id="batch-tab"] {
+  //   &:checked {
+  //     &~.glider {
+  //       transform: translateX(400%);
+  //     }
+  //   }
+  // }
+
+  // input[id="processed-tab"] {
+  //   &:checked {
+  //     &~.glider {
+  //       transform: translateX(500%);
+  //     }
+  //   }
+  // }
+
+  // input[id="non-transactions-tab"] {
+  //   &:checked {
+  //     &~.glider {
+  //       transform: translateX(600%);
+  //     }
+  //   }
+  // }
+
+  // input[id="unallocated-tab"] {
+  //   &:checked {
+  //     &~.glider {
+  //       transform: translateX(700%);
+  //     }
+  //   }
+  // }
+
+  // input[id="deleted-tab"] {
+  //   &:checked {
+  //     &~.glider {
+  //       transform: translateX(600%);
+  //     }
+  //   }
+  // }
+
+  .glider {
+    position: absolute;
+    display: flex;
+    height: 30px;
+    width: 15rem;
+    background-color: #4c7295;
+    color: #fff;
+    z-index: 1;
+    border-radius: 20px; // just a high number to create pill effect
+    transition: 0.25s ease-out;
+  }
+
+  @media (max-width: 700px) {
+    .tabs {
+      transform: scale(0.6);
+    }
+  }
+}

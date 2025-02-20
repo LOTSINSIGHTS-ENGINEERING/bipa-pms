@@ -1,0 +1,94 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.deleted-transactions-tabs {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .deleted-tabs {
+    display: flex;
+    position: relative;
+    border: 1px solid #d1d5db; /* Light border for minimalism */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 12px;
+    width: 300px; /* Narrower width for a compact look */
+    height: 35px;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .deleted-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 15px;
+    color: rgb(19, 18, 18);
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+  }
+
+  .notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.5rem;
+    border-radius: 50%;
+    background-color: blue;
+    color: whitesmoke;
+    transition: 0.15s ease-in;
+  }
+
+  input[type="radio"]:checked ~ .deleted-tab {
+    color: rgb(19, 18, 18);
+  }
+
+  input[id="created-tab"]:checked {
+    & ~ .deleted-glider {
+      transform: translateX(0);
+    }
+  }
+
+  .deleted-tab.active {
+    color: white;
+  }
+
+  input[id="allocated-tab"]:checked {
+    & ~ .deleted-glider {
+      transform: translateX(100%);
+    }
+  }
+
+  .deleted-glider {
+    position: absolute;
+    display: flex;
+    height: 35px;
+    width: 150px;
+    background-color: #4c7295;
+    color: #fff;
+    z-index: 1;
+    border-radius: 12px;
+    transition: 0.25s ease-out;
+  }
+
+  @media (max-width: 700px) {
+    .deleted-tabs {
+      transform: scale(0.8);
+    }
+  }
+}

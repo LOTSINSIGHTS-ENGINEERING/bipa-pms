@@ -1,0 +1,26 @@
+.section-job-card-stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.section-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}

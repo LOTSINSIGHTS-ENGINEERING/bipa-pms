@@ -1,0 +1,131 @@
+/* Custom Table Styles */
+/* Custom Table Styles */
+.people-tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the table horizontally */
+  width: 100%;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.custom-table th.header-cell {
+  background-color: #3C4EA0;
+  color: white;
+  height: 70px;
+  font-weight: bold;
+  padding: 8px;
+  position: relative; /* Ensure the vertical line is positioned correctly */
+  border-right: none !important; /* Remove right border */
+  border: none !important; /* Remove all borders */
+}
+
+.custom-table th.header-cell::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 50%; /* Adjust the height as needed */
+  width: 3px;
+  background-color: white; /* Color of the vertical line */
+  transform: translateY(-50%);
+}
+
+.custom-table th.header-cell:last-child::after {
+  display: none; /* Remove vertical line after the last header cell */
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 8px;
+  border: none !important; /* Remove all borders */
+}
+
+.custom-table tbody td {
+  border: none !important; /* Remove all borders */
+}
+
+.custom-table tbody tr {
+  background-color: white !important; /* Ensure all rows have a white background */
+}
+
+.custom-table tbody tr:hover {
+  background-color: #ddd; /* Hover effect */
+}
+
+/* Remove custom row styles */
+.custom-row:nth-child(odd),
+.custom-row:nth-child(even) {
+  background-color: white !important; /* Ensure all custom rows have a white background */
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+   width: 100%;
+  padding: 10px 0;
+}
+.pagination-button {
+  background-color: #3c4ea0;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 17px;
+  font-size: 14px;
+  width: 100px;
+  height: 40px;
+}
+
+.pagination-button:hover {
+  background-color: #3c4ea0;
+}
+
+.pagination-button:hover {
+  background-color: #3C4EA0;
+}
+
+.pagination-button:disabled {
+  background-color: #3C4EA0;
+  cursor: not-allowed;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input[type="text"] {
+  width: 300px; /* Increased width */
+  padding: 8px 10px;
+  border: 2px solid #3C4EA0; /* Blue border */
+  border-radius: 17px; /* Border radius */
+  font-size: 11px; /* Adjusted font size */
+  outline: none;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #3C4EA0; /* Blue border color on focus */
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #3C4EA0; /* Blue icon color */
+  cursor: pointer;
+}
+

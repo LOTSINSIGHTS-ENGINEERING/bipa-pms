@@ -1,0 +1,139 @@
+// Black Theme with Black, Grey, and White Accents
+
+// Font Sizes
+$font-size-xs: 0.7em;
+$font-size-sm: 0.75rem;
+$font-size: 0.8rem;
+$font-size-md: 1.02rem;
+$font-size-lg: 1.2rem;
+$font-size-xl: 1.4rem;
+$font-size-xxl: 1.6rem;
+$font-size-xxxl: 2rem;
+
+// Font sizes
+$title: $font-size-xxxl;
+$subtitle: $font-size-xl;
+
+$font-weight: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 800;
+
+// Margins
+$margin: 0.5em;
+$margin-1: 5em;
+$margin-2: 7em;
+
+// Colors for the Black Theme
+$primary-color: #231f20;  // Primary color can remain blue
+$accent-color: #ec2027;   // Accent color remains red for emphasis
+$secondary-color: #231f20;  // Dark background color (almost black)
+
+$darker-secondary-color: #35508b;  // Slightly lighter shade of dark for accents
+$grey-color: #a9a9ab;   // Light grey for text and borders
+$dark-grey-color: #666; // Medium grey for subtle text and elements
+$light-grey-color: #ccc; // Light grey for background elements
+$black-color: #000;     // Pure black for backgrounds and strong elements
+$white-color: #fff;     // Pure white for text and highlights
+$muted-color: #f0f0f0;  // Light muted grey for inputs or less emphasized areas
+$dark-muted-color: #e8e8e8; // Darker muted grey for borders and inactive states
+$light-bg: #efefef;     // Light grey background for cards and sections
+$hover-color: #ffffdd;  // Light color for hover effects, close to white
+
+// Button Colors
+$secondary-btn: #2f80ed;    // Secondary button (blue)
+$secondary-btn-hover: #35508b;  // Darker hover state
+$danger-btn: #e41f25;   // Red for danger actions
+$danger-btn-hover: #de2227; // Darker red hover
+$success-color: #4bb543;  // Green for success actions
+$danger-color: #dc3545;   // Danger red
+$warning-color: #faa05a;  // Yellow for warnings
+$hover-color: #ffd;     // Light yellow for button hover
+
+// Rating Colors (keep contrast for visibility)
+$blue-color: #2f80ed;    // Blue
+$green-color: #4bb543;   // Green
+$purple-color: #9b59b6;   // Purple
+$red-color: #dc3545;     // Red
+
+// Border Radius
+$border-radius: 0.5em;   // Slightly rounded corners for cards and buttons
+$border-radius-lg: 5px;  // Larger rounded corners for bigger components
+
+// Drawer Size
+$drawer-width: 220px;    // Width for any side drawer
+
+// General Styles for a Black Themed Page
+body {
+  background-color: $black-color;    // Background color for the whole page
+  color: $white-color;                // Default text color to white for readability
+  font-family: "Helvetica", sans-serif;
+}
+
+// Card and container elements
+.dashboard-card {
+  background-color: $secondary-color; // Dark background for cards
+  color: $white-color;  // White text for visibility
+  border-radius: $border-radius;  // Rounded corners
+  border: 2px solid $dark-grey-color;  // Subtle border in dark grey
+  padding: 20px;
+  
+  &:hover {
+    background-color: $darker-secondary-color;  // Darker background on hover
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);  // Subtle shadow on hover
+  }
+
+  .value {
+    color: $light-grey-color;  // Light grey for the value text
+  }
+
+  .label {
+    color: $grey-color;  // Grey color for the label text
+  }
+
+  .info-strip {
+    background-color: $dark-grey-color;  // Dark grey strip at the bottom of the card
+  }
+}
+
+// Button Styles
+button {
+  background-color: $secondary-btn;    // Use blue for default button color
+  color: $white-color;                  // White text
+  border-radius: $border-radius;        // Rounded corners
+  padding: 10px 20px;
+  border: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-btn-hover;  // Darker blue on hover
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  &.danger {
+    background-color: $danger-btn;     // Red for danger buttons
+    &:hover {
+      background-color: $danger-btn-hover;  // Darker red on hover
+    }
+  }
+
+  &.success {
+    background-color: $success-color;  // Green for success buttons
+  }
+}
+
+// Input fields, cards, and components that require dark mode adjustments
+input,
+textarea {
+  background-color: $dark-muted-color;  // Dark input background
+  color: $white-color;  // White text for readability
+  border-radius: $border-radius;  // Rounded corners
+  padding: 10px;
+  border: 1px solid $grey-color;  // Grey border for inputs
+}
+
+.card {
+  background-color: $secondary-color;  // Card background
+  border-radius: $border-radius-lg;    // Larger rounded corners
+  padding: 20px;
+  border: 1px solid $dark-grey-color;  // Subtle dark grey border
+}
