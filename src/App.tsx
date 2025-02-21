@@ -226,7 +226,8 @@ const DIRECTOR_USER_ROUTES = () => {
           <Route path="*" element={<Navigate to="home/dashboard" />} />
         </Route>
 
-        <Route path="/" element={<LoggedOut />} />
+        {/* <Route path="/" element={<LoggedOut />} /> */}
+        <Route path="/" element={<NewLoggedOut />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
@@ -298,7 +299,7 @@ const MD_USER_ROUTES = () => {
           <Route path="*" element={<Navigate to="home/dashboard" />} />
         </Route>
 
-        <Route path="/" element={<LoggedOut />} />
+        <Route path="/" element={<NewLoggedOut />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
@@ -393,7 +394,7 @@ const SUPER_USER_ROUTES = () => {
           <Route path="*" element={<Navigate to="home/dashboard" />} />
         </Route>
 
-        <Route path="/" element={<LoggedOut />} />
+        <Route path="/" element={<NewLoggedOut />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
@@ -456,7 +457,7 @@ const EXECUTIVE_USER_ROUTES = () => {
           <Route path="*" element={<Navigate to="home/dashboard" />} />
         </Route>
 
-        <Route path="/" element={<LoggedOut />} />
+        <Route path="/" element={<NewLoggedOut />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
@@ -524,7 +525,7 @@ const ADMIN_USER_ROUTES = () => {
           <Route path="*" element={<Navigate to="home/dashboard" />} />
         </Route>
 
-        <Route path="/" element={<LoggedOut />} />
+        <Route path="/" element={<NewLoggedOut />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
@@ -588,7 +589,7 @@ const MANAGER_USER_ROUTES = () => {
         <Route path="job-cards/allocate" element={<AllocateJobCardMain />} />
         <Route path="job-cards/management" element={<JobCardManagement />} />
 
-        <Route path="/" element={<LoggedOut />} />
+        <Route path="/" element={<NewLoggedOut />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
@@ -652,7 +653,7 @@ const SUPERVISOR_USER_ROUTES = () => {
           <Route path="*" element={<Navigate to="home/dashboard" />} />
         </Route>
 
-        <Route path="/" element={<LoggedOut />} />
+        <Route path="/" element={<NewLoggedOut />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
@@ -825,7 +826,7 @@ const EMPLOYEE_USER_ROUTES = () => {
           <Route path="*" element={<Navigate to="home/dashboard" />} />
         </Route>
 
-        <Route path="/" element={<LoggedOut />} />
+        <Route path="/" element={<NewLoggedOut />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

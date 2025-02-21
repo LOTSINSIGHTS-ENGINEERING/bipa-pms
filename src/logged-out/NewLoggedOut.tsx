@@ -1,4 +1,8 @@
-import { faEyeSlash, faEye, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEyeSlash,
+  faEye,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { observer } from "mobx-react-lite";
 import { useState, FormEvent } from "react";
@@ -12,7 +16,7 @@ import showModalFromId from "../shared/functions/ModalShow";
 import { PASSWORD } from "./dialog/Dialogs";
 import ForgotPasswordDialog from "./dialog/ForgotPasswordDialog";
 import DisabledAccount from "./DisabledAccount";
-import "./LoggedOut.scss";
+// import "./LoggedOut.scss";
 
 const style = {
   display: "flex",
@@ -83,15 +87,25 @@ const LoggedOut: React.FC = observer(() => {
 
   return (
     <ErrorBoundary>
-      <div className="login-container" style={{ backgroundImage: 'url(/your-background-image.jpg)', backgroundSize: 'cover' }}>
+      <div
+        className="login-container"
+        style={{
+          backgroundImage: "url(../../../../public/background.jpg)",
+          backgroundSize: "cover",
+        }}
+      >
         <div className="login-card">
           <div className="login-left">
             <h2>E-Performance Management System</h2>
             <p>
-              Performance Management is an ongoing engagement and communication process involving the supervisor and the subordinate (employees).
+              Performance Management is an ongoing engagement and communication
+              process involving the supervisor and the subordinate (employees).
             </p>
             <div className="login-illustration">
-              <img src="/mqdefault.jpg" alt="Business Management Illustration" />
+              <img
+                src="/mqdefault.jpg"
+                alt="Business Management Illustration"
+              />
             </div>
           </div>
 
@@ -126,7 +140,7 @@ const LoggedOut: React.FC = observer(() => {
               <div className="input-group">
                 <label>Password</label>
                 <div className="input-wrapper">
-                  <FontAwesomeIcon icon={faEye} className="input-icon" />
+                  {/* <FontAwesomeIcon icon={faEye} className="input-icon" /> */}
                   <input
                     type={passwordType}
                     placeholder="Enter Password"
@@ -139,8 +153,14 @@ const LoggedOut: React.FC = observer(() => {
                     }
                     required
                   />
-                  <button type="button" className="toggle-password" onClick={togglePassword}>
-                    <FontAwesomeIcon icon={passwordType === 'password' ? faEyeSlash : faEye} />
+                  <button
+                    type="button"
+                    className="toggle-password"
+                    onClick={togglePassword}
+                  >
+                    <FontAwesomeIcon
+                      icon={passwordType === "password" ? faEyeSlash : faEye}
+                    />
                   </button>
                 </div>
               </div>

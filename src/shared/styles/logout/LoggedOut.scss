@@ -1,83 +1,134 @@
-.logged-out {
-  height: 100vh;
-  background: $primary-color 40%;
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, $primary-color, $accent-color, $grey-color) !important;
+  padding: 20px;
+}
 
-  .login {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: $white-color;
-    border-radius: $border-radius;
-    // position: absolute;
-    // width: clamp(480px, 100%, 580px);
-    // top: 50%;
-    // transform: translateY(-50%);
-    // right: 20px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // flex-direction: column;
-    // overflow: hidden;
-    // background-color: $white-color;
-    // transition: 0.3s all ease;
-    // border-radius: 2.5px;
+.login-card {
+  height: 80vh;
+  min-height: 600px;
+  display: flex;
+  width: 200%;
+  max-width: 1100px;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: $secondary-color;
+  overflow: hidden;
+}
 
-    &:hover {
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    }
+.login-left, .login-right {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
+.login-left {
+  background-color: $muted-color;
+  text-align: center;
 
-      span {
-        color: $primary-color;
-      }
-    }
+  h2 {
+    font-size: 1.8rem;
+    color: $black-color;
+    margin-bottom: 20px;
+  }
 
-    .icon-button {
-      border: none;
-      background: transparent;
+  p {
+    color: $dark-grey-color;
+    margin-bottom: 40px;
+  }
 
-      svg {
-        margin-top: 25px;
-        cursor: pointer;
-      }
-    }
-
-    .controls {
-      display: flex;
-
-      .uk-button {
-        background-color: $primary-color;
-        color: $white-color;
-        font-weight: $font-weight-semibold;
-        border-radius: $border-radius;
-        text-transform: none;
-
-        &:hover {
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        }
-      }
-    }
+  .login-illustration img {
+    max-width: 80%;
+    height: auto;
   }
 }
 
-.forgot-password {
-  .uk-button {
-    background-color: $primary-color;
+.login-right {
+  background-color: $light-grey-color;
+
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: $primary-color;
+  }
+
+  p {
+    color: $dark-grey-color;
+    margin-bottom: 30px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .input-wrapper {
+      position: relative;
+      
+      .input-icon {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        color: $dark-grey-color;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px 10px 10px 35px;
+        border: 1px solid $grey-color;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        background-color: $dark-muted-color;
+        color: $white-color;
+      }
+    }
+  }
+
+  .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: $dark-grey-color;
+  }
+
+  .login-button {
+    width: 50%;
+    padding: 10px;
+    background-color: $accent-color;
     color: $white-color;
-    font-weight: $font-weight-semibold;
+    font-size: 1rem;
+    border: none;
     border-radius: $border-radius;
-    text-transform: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: $danger-btn-hover;
+    }
+  }
+
+  .terms, .register {
+    margin-top: 20px;
+    text-align: center;
+    color: $grey-color;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

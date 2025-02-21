@@ -130,7 +130,7 @@ export default class UserApi {
     const path = this.getPath();
     if (!path) return;
 
-    const password = "123456///tc";
+    const password = "Default123";
     const { email } = user;
     
     const userCredential = await createUserWithEmailAndPassword(authWorker, email, password).catch((error) => {
