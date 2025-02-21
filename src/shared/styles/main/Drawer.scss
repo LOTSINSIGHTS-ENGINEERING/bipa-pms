@@ -2,7 +2,7 @@
   height: 100%;
   padding-top: 15px;
   background: $white-color;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.01), 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08), 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .drawer-content {
@@ -12,9 +12,7 @@
 
     img {
       object-fit: contain;
-      -o-object-fit: contain;
       object-position: center center;
-      -o-object-position: center center;
       padding: 10px;
     }
   }
@@ -23,6 +21,7 @@
     ul.main-list {
       list-style: none;
       margin: 0;
+      padding: 0;
 
       .list-item {
         margin-bottom: 4px;
@@ -35,6 +34,7 @@
             position: absolute;
             right: 5px;
             transform: rotate(180deg);
+            transition: transform 0.3s ease-in-out;
           }
         }
 
@@ -42,9 +42,16 @@
           position: relative;
           padding: 0.4em 0.5em;
           font-size: $font-size;
-          transition: 0.3s ease-in-out all;
+          transition: all 0.3s ease-in-out;
           color: $secondary-color;
           font-weight: $font-weight-semibold;
+          display: block;
+          border-radius: 4px;
+
+          &:hover {
+            background-color: lighten($primary-color, 20%);
+            color: darken($secondary-color, 15%);
+          }
 
           .down-arrow {
             position: absolute;
@@ -57,6 +64,8 @@
         .active {
           background-color: $primary-color;
           color: $white-color;
+          font-weight: bold;
+          border-radius: 4px;
         }
 
         .uk-nav-sub {
@@ -64,6 +73,7 @@
 
           .navlink {
             border-left: 4px solid transparent;
+            padding-left: 10px;
           }
 
           .active {
@@ -80,10 +90,11 @@
   top: 0;
   bottom: 0;
   left: -270px;
-  box-sizing: border-box;
   width: 270px;
   padding: 20px 20px;
   background: $white-color !important;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }

@@ -141,7 +141,7 @@ export default class AuthApi {
     await reauthenticateWithCredential(user, credential)
       .then(() => {
         if (newPassword.length >= 6)
-          // User re-authenticated.
+          // User re-authenticated.hg
           updatePassword(user, newPassword)
             .then(function () {
               // Update successful.
