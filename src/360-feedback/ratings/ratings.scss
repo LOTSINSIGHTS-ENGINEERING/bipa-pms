@@ -1,0 +1,109 @@
+// ratings.scss
+
+// Variables
+$background-color: #E1EFFA;
+$primary-color: #004D4D;
+$text-color: #333;
+$card-background: #ffffff;
+$card-border-color: #ddd;
+$border-radius: 8px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$spacing: 20px;
+$breakpoint-mobile: 768px; // Define a breakpoint for mobile devices
+
+.doughnuts {
+  background-color: $background-color;
+  padding: $spacing;
+  border-radius: $border-radius;
+  // box-shadow: $box-shadow;
+  margin-bottom: $spacing;
+
+  // Flex container to align doughnuts side by side
+  display: flex;
+  flex-wrap: wrap; // Allow wrapping on smaller screens
+  gap: $spacing; // Space between the doughnut blocks
+
+  .doughnut-block {
+    flex: 1; // Each doughnut block will take up equal space
+    background: $card-background;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: $spacing;
+    text-align: center; // Center text within the block
+
+    h4 {
+      color: $primary-color;
+      margin-bottom: $spacing / 2;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    // Optional: Style for the doughnut chart container
+    .doughnut-chart {
+      margin: 0 auto;
+    }
+  }
+
+  // Responsive styles for smaller screens
+  @media (max-width: $breakpoint-mobile) {
+    .doughnut-block {
+      flex: 1 1 100%; // Allow blocks to take full width
+      margin-bottom: $spacing; // Space between blocks
+    }
+  }
+}
+
+.table-container {
+  background-color: $card-background;
+  border-radius: $border-radius;
+  border: 1px solid $card-border-color;
+  box-shadow: $box-shadow;
+  padding: $spacing;
+
+  .flag-ratings-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid $card-border-color;
+    }
+
+    th {
+      background-color: $primary-color;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: lighten($background-color, 10%);
+    }
+
+    tr:hover {
+      background-color: lighten($background-color, 15%);
+    }
+  }
+}
+
+// General styles
+.uk-card-default {
+  background-color: $card-background;
+  border-radius: $border-radius;
+  border: 1px solid $card-border-color;
+  box-shadow: $box-shadow;
+}
+
+h3 {
+  color: $primary-color;
+  font-size: 24px;
+  margin-bottom: $spacing;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

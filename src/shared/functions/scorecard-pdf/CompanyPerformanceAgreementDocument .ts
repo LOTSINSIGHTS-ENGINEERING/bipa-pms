@@ -271,7 +271,7 @@ export const CompanyPerformanceAgreementDocument = async (
         "______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________"
       ),
       marginTopBottom(),
-      sectionHeader(`Company: Nkurenkuru Town Council`),
+      sectionHeader(`Company: BIPA`),
       marginTopBottom(),
       sectionHeader(`Performance Agreement Period: ${title}`),
       marginTopBottom(),

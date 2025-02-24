@@ -1,0 +1,241 @@
+.value-page {
+  position: relative;
+
+  .user-block {
+    margin: 20px 0; // Adjusted to remove horizontal margins
+    border: 1px solid #2EBDA6;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    position: relative;
+    width: 100%; // Ensure full width
+
+    .user-greeting {
+      color: #093545;
+    }
+
+    .user-name {
+      color: #2EBDA6;
+      font-weight: bold;
+    }
+
+    .select-container {
+      margin-left: 10px;
+    }
+
+    .avatar-circle {
+      width: 50px;
+      height: 50px;
+      background-color: #093545;
+      border: 2px solid #2EBDA6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .avatar-initials {
+        color: white;
+        font-size: 20px;
+      }
+    }
+
+    .user-information {
+      background-color: #f4f4f4;
+
+      .label {
+        color: #2EBDA6;
+        font-weight: bold;
+      }
+
+      .value {
+        color: #333;
+      }
+    }
+  }
+
+  .dropdown-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .user-list-dropdown {
+      flex: 1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+
+      &.Mui-expanded {
+        margin: 0;
+      }
+
+      .MuiAccordionSummary-root {
+        background-color: #f5f5f5;
+        
+        &:hover {
+          background-color: #e0e0e0;
+        }
+
+        .MuiTypography-root {
+          font-weight: bold;
+        }
+      }
+
+      .MuiAccordionDetails-root {
+        padding: 16px;
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+
+      &.rated-list {
+        .MuiAccordionSummary-root {
+          background-color: #e8f5e9;
+          &:hover {
+            background-color: #badfd9;
+          }
+        }
+      }
+
+      &.not-rated-list {
+        .MuiAccordionSummary-root {
+          background-color: #e8f5e9;
+          &:hover {
+            background-color: #badfd9;
+          }
+        }
+      }
+    }
+  }
+  
+  .toggle-details-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #093545;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    
+
+    svg {
+      height: 2em;
+      width: 2em;
+    }
+
+    &:hover {
+      background-color: darken(#093545, 10%);
+    }
+  }
+
+ 
+  .user-lists {
+    margin: 20px 0; 
+    border: 1px solid #2EBDA6;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    position: relative;
+    width: 100%; 
+
+    .user-list-card {
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      .list-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: #2c3e50;
+
+        .dropdown-icon {
+          margin-left: 10px;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: translateY(2px);
+          }
+        }
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+          padding: 8px 0;
+          border-bottom: 1px solid #ecf0f1;
+          color: #34495e;
+          font-size: 0.9rem;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .value-page {
+    padding: 10px;
+
+    .user-block {
+      .user-greeting {
+        font-size: 1.2rem;
+
+        .select-container {
+          display: block;
+          margin-top: 10px;
+          margin-left: 0;
+        }
+      }
+
+      .avatar-circle {
+        width: 50px;
+        height: 50px;
+
+        .avatar-initials {
+          font-size: 1.2rem;
+        }
+      }
+
+      .user-information {
+        .label {
+          font-size: 0.8rem;
+        }
+
+        .value {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .user-lists {
+      .user-list-card {
+        padding: 15px;
+
+        .list-title {
+          font-size: 1.1rem;
+        }
+
+        ul li {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

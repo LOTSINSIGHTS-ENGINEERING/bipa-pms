@@ -1,0 +1,22 @@
+body {
+  font-family: 'Lexend', sans-serif; /* Add fallback font */
+  font-style: normal; 
+}
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+    .requests-table th,
+  .requests-table td {
+    padding: 8px; 
+    text-align: left; 
+    border-bottom: 1px solid #0097AF; 
+  }
+  .requests-table th {
+    font-weight: bold; 
+  }
+
+  
+  
+  

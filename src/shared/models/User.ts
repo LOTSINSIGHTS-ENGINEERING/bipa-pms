@@ -196,6 +196,7 @@ export interface IUser {
   role: string;
   jobTitle: string | null;
   devUser?: boolean;
+  jobGrade?:string;
   disabled?: boolean;
   feature: IFeatureAccess[];
    onReports?: boolean,

@@ -34,6 +34,21 @@ import GeneralTaskApi from "./GeneralTaskApi";
 import SubordinateObjectiveApi from "./SubordinateObjectiveApi";
 
 import JobCardApi from "./JobCardApi";
+import ChatApi from "./three-sixty-apis/Chat/ChatApi";
+import CommitteeApi from "./three-sixty-apis/Committee";
+import CommitteeRatingApi from "./three-sixty-apis/CommitteeRatingApi";
+import LeadershipApi from "./three-sixty-apis/LeadershipApi";
+import LeadershipRatingApi from "./three-sixty-apis/LeadershipRatingApi";
+import MessagesApi from "./three-sixty-apis/messages/MessagesApi";
+import ProjectRatingApi from "./three-sixty-apis/ProjectRatingApi";
+import RatingAssignmentApi from "./three-sixty-apis/RatingAssignmentApi";
+import RatingSessionApi from "./three-sixty-apis/RatingSessionApi";
+import ServiceApi from "./three-sixty-apis/ServiceApi";
+import ServiceRatingApi from "./three-sixty-apis/ServiceRatingApi";
+import TemplateApi from "./three-sixty-apis/TemplateApi";
+import TemplateRatingApi from "./three-sixty-apis/TemplateRatingApi";
+import ValueApi from "./three-sixty-apis/ValueApi";
+import ValueRatingApi from "./three-sixty-apis/ValueRatingApi";
 
 export const apiPathCompanyLevel = (
   category:
@@ -131,6 +146,25 @@ jobcard:JobCardApi;
   // check in
   checkIn: CheckInApi;
  
+   //360 feedback apis
+   value: ValueApi;
+   leadership: LeadershipApi;
+   messages: MessagesApi;
+   ratingAssignments: RatingAssignmentApi;
+   valueRating: ValueRatingApi;
+   leadershipRating: LeadershipRatingApi;
+   projects: ProjectApi;
+   service: ServiceApi;
+   committee: CommitteeApi;
+   serviceRating: ServiceRatingApi;
+   committeeRating: CommitteeRatingApi;
+   projectRating: ProjectRatingApi;
+   chatApi: ChatApi;
+   template: TemplateApi;
+   ratingSession: RatingSessionApi; //will be removed
+   templates:TemplateApi;
+   templateRating:TemplateRatingApi;
+   //360 feedback apis
 
   constructor(store: AppStore) {
     this.mail = new MailApi(this, store, mailApiEndpoint);
@@ -192,7 +226,25 @@ jobcard:JobCardApi;
     // Project Managements APIs
     this.projectManagement = new ProjectManagementApi(this, store);
     this.generalTask = new GeneralTaskApi(this, store);
-
+  //360 feedback
+  this.value = new ValueApi(this, store);
+  this.leadership = new LeadershipApi(this, store);
+  this.messages = new MessagesApi(this, store);
+  this.valueRating = new ValueRatingApi(this, store);
+  this.leadershipRating = new LeadershipRatingApi(this, store);
+  this.ratingAssignments = new RatingAssignmentApi(this, store);
+  this.projects = new ProjectApi(this, store);
+  this.service = new ServiceApi(this, store);
+  this.committee = new CommitteeApi(this, store);
+  this.committeeRating = new CommitteeRatingApi(this, store);
+  this.serviceRating = new ServiceRatingApi(this, store);
+  this.projectRating = new ProjectRatingApi(this, store);
+  this.chatApi = new ChatApi(this,store);
+  this.template = new TemplateApi(this, store);
+  this.templateRating = new TemplateRatingApi(this,store);
+   this.ratingSession = new RatingSessionApi(this, store);
+  this.templates = new TemplateApi(this,store);
+  //360 feedback
     // check ins
     this.checkIn = new CheckInApi(this, store);
   }

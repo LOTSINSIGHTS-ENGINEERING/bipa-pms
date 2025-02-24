@@ -1,0 +1,160 @@
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+.user-modal {
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+
+  .uk-modal-close-default {
+    @include transition;
+    color: #333333;
+    opacity: 0.7;
+
+    &:hover {
+      color: #093545;
+      opacity: 1;
+    }
+  }
+
+  .uk-modal-title {
+    color: #093545;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .uk-fieldset {
+    border: none;
+    padding: 0;
+  }
+
+  .uk-input {
+    @include transition;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+
+    &:focus {
+      border-color:#14919b ;
+      box-shadow: 0 0 0 2px rgba(#14919b, 0.2);
+    }
+  }
+
+  .dimension-view {
+    margin-top: 1.5rem;
+  
+    ul {
+      margin-bottom: 1.5rem;
+    }
+  
+    li {
+      @include transition;
+      background-color: #ffffff;
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  
+      &:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      .statement-buttons {
+        display: flex;
+        align-items: center;
+  
+        .edit-statement,
+        .delete-statement {
+          @include transition;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0.3rem;
+          margin-left: 0.5rem;
+  
+          svg {
+            fill: #333333;
+          }
+  
+          &:hover svg {
+            fill: #14919b;
+          }
+        }
+  
+        .delete-statement:hover svg {
+          fill: #f44336;
+        }
+      }
+    }
+  
+    .add-statement {
+      @include transition;
+      background-color: #14919b;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+  
+      &:hover {
+        background-color: darken(#14919b, 10%);
+      }
+    }
+  }
+  
+  .uk-width-1-1 {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .btn-text {
+    @include transition;
+    background: none;
+    border: none;
+    color: #333333;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+
+    &:hover {
+      color: #14919b;
+    }
+  }
+
+  .btn-primary {
+    @include transition;
+    background-color: #093545;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#093545, 10%);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+
+  [data-uk-spinner] {
+    margin-left: 0.5rem;
+  }
+}

@@ -1,0 +1,116 @@
+/* Global styles for compact design */
+.top-rated-container {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ratee list styles */
+.ratee-list {
+  margin: 0;
+  padding: 0;
+}
+
+.ratee-item {
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.ratee-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.ratee-name, .ratee-overall-average, .ratee-department, .ratee-job-title {
+  margin: 2px 0;
+  font-weight: 600;
+}
+
+.ratee-overall-average, .ratee-department, .ratee-job-title {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Rater list styles */
+.rater-list {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.rater-item {
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.rater-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rater-name, .rater-type {
+  font-size: 0.8rem;
+}
+
+.details-button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0;
+}
+
+.details-button:hover {
+  text-decoration: underline;
+}
+
+.details-row {
+  padding-top: 5px;
+}
+
+/* Table styles */
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+
+.details-table th, .details-table td {
+  padding: 5px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.details-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.details-table td {
+  color: #333;
+}
+
+/* Loader and Error styles */
+.loader, .error {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.error {
+  color: red;
+}

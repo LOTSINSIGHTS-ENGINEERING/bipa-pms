@@ -1,0 +1,84 @@
+.user-templates-view {
+  padding: 2rem;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+
+    .toggle-form-button {
+      background-color: #093545;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#093545, 10%);
+      }
+
+      svg {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .request-form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+
+    .MuiTextField-root,
+    .MuiFormControl-root {
+      margin-bottom: 1rem;
+    }
+
+    .MuiInputLabel-root {
+      color: #093545;
+    }
+
+    .MuiOutlinedInput-root {
+      &:hover fieldset {
+        border-color: #093545;
+      }
+      &.Mui-focused fieldset {
+        border-color: #093545;
+      }
+    }
+
+    .watermark {
+      background-color: #f0f4f8; 
+      padding: 1rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      border: 1px dashed #093545; // Optional: dashed border to indicate it’s a watermark
+      font-style: italic; 
+    }
+    
+    .submit-button {
+      background-color: #093545;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#093545, 10%);
+      }
+    }
+  }
+
+  .request-table {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,18 @@
+/* Modal styling */
+.user-modal {
+  width: 600px; /* Ensure the modal width */
+  max-width: 100%; /* Ensure responsiveness */
+}
+
+/* Button styling */
+.small-button {
+  padding: 6px 12px; /* Smaller padding */
+  font-size: 0.875rem; /* Smaller font size */
+  border-radius: 4px; /* Slightly rounded corners */
+  height: 50px;
+}
+
+.small-button:disabled {
+  background-color: #ccc; /* Gray color for disabled state */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+}

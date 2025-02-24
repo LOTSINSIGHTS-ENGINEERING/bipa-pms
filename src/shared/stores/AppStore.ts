@@ -35,6 +35,22 @@ import PortfolioStore from "./PortfolioStore";
 import GeneralTaskStore from "./GeneralTaskStore";
 import SubordinateObjectiveStore from "./SubordinateObjectiveStore";
 import JobCardStore from "./JobCardStore";
+import ValueStore from "./three-sixty-feeedback-stores/ValueStore";
+import LeadershipStore from "./three-sixty-feeedback-stores/LeadershipStore";
+import PrivateMessageStore from "./three-sixty-feeedback-stores/Messages/MessagesStore";
+import RatingAssignmentStore from "./three-sixty-feeedback-stores/RatingAssignmentStore";
+import ValueRatingStore from "./three-sixty-feeedback-stores/ValueRatingStore";
+import LeadershipRatingStore from "./three-sixty-feeedback-stores/LeadershipRatingStore";
+
+import ServiceStore from "./three-sixty-feeedback-stores/ServiceStore";
+import CommitteeRatingStore from "./three-sixty-feeedback-stores/CommitteeRatingStore";
+import CommitteeStore from "./three-sixty-feeedback-stores/CommitteeStore";
+import ProjectRatingStore from "./three-sixty-feeedback-stores/ProjectRatingStore";
+import RatingSessionStore from "./three-sixty-feeedback-stores/RatingSessionStore";
+import ServiceRatingStore from "./three-sixty-feeedback-stores/ServiceRatingStore";
+import TemplateRatingStore from "./three-sixty-feeedback-stores/TemplateRatingStore";
+import TemplateStore from "./three-sixty-feeedback-stores/TemplateStore";
+import ChatStore from "./three-sixty-feeedback-stores/Chat/ChatStore";
 
 // import ClientStore from "./job-card-stores/Client";
 // import LabourStore from "./job-card-stores/Labour";
@@ -98,4 +114,22 @@ export default class AppStore {
 
   // check in
   checkIn = new CheckInStore(this);
+    //360-feedback stores
+    value = new ValueStore(this);
+    leadership = new LeadershipStore(this);
+    messages = new PrivateMessageStore(this);
+    ratingAssignments = new RatingAssignmentStore(this);
+    valueRating = new ValueRatingStore(this);
+    leadershipRating = new LeadershipRatingStore(this);
+    chat = new ChatStore(this);
+    projects = new ProjectStore(this);
+    services = new ServiceStore(this);
+    committees = new CommitteeStore(this);
+    projectRating = new ProjectRatingStore(this);
+    serviceRating = new ServiceRatingStore(this);
+    committeeRating = new CommitteeRatingStore(this);
+    ratingSession = new RatingSessionStore(this);
+    templates = new TemplateStore(this);
+    templateRating = new TemplateRatingStore(this);
+    //360-feedback stores
 }

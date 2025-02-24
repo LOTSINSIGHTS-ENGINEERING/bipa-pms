@@ -1,0 +1,49 @@
+.custom-data-grid {
+  border: none;
+  font-family: 'Arial', sans-serif;
+  margin: 20px;  /* Add margin around the table */
+  
+
+  // Style for completed rows
+  .completed-row {
+      background-color: #e8f5e9;  // Light green background
+
+      &:hover {
+          background-color: #c8e6c9;  // Slightly darker green on hover
+      }
+
+      .MuiTypography-root {
+          color: #2e7d32;  // Darker green text for "Completed" status
+          font-weight: bold;
+      }
+  }
+
+  // Style for action buttons
+  .MuiIconButton-root {
+      color: #757575;
+      
+      &:hover {
+          color: #1976d2;  // Primary color on hover
+          background-color: rgba(25, 118, 210, 0.04);  // Light blue background on hover
+      }
+  }
+
+  // Tooltip styles
+  .MuiTooltip-tooltip {
+      background-color: #333;
+      color: #fff;
+      font-size: 12px;
+  }
+
+  // Custom styles for specific columns
+  .MuiDataGrid-cell[data-field="dueDate"],
+  .MuiDataGrid-cell[data-field="status"] {
+      font-weight: bold;
+  }
+
+  .MuiDataGrid-cell[data-field="reasonForRequest"] {
+      color: #555;
+      font-style: italic;
+  }
+}
+

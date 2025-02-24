@@ -1,7 +1,7 @@
 export const brandLogo = async () => {
   return {
     style: "brandLogo",
-    image: await getBase64ImageFromURL(`${process.env.PUBLIC_URL}/logo512.png`),
+    image: await getBase64ImageFromURL(`${process.env.PUBLIC_URL}/unicomms.png`),
     fit: [76, 76],
   };
 };

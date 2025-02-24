@@ -1,0 +1,56 @@
+
+.criteria-box {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #a5d3e9; /* White background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Smooth transition on hover */
+    width: 1050px;
+    height: 500px;
+    transition: transform 0.2s ease; /* Smooth transition on hover */
+    position: relative; /* Ensure the criteria box is positioned relatively */
+  }
+  .white-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff; /* White background */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 10px; /* Adjust padding to center content vertically */
+  
+    h3 {
+      margin: 0;
+      text-align: center; /* Align heading to the center */
+    }
+  }
+  
+  .rankings-container {
+    position: absolute;
+    bottom: 10px; /* Adjust distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .ranking-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .criteria-box.blue {
+    background-color: #3498db; /* Blue background */
+    color: #ffffff; /* White text color */
+  }
+  

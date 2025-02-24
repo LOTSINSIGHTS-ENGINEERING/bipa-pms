@@ -19,6 +19,18 @@ export const timestampToDate = (timestamp: any): string => {
 export const timestampToTime = (timestamp: any): string => {
   return timestamp.toDate().toLocaleTimeString("en-US");
 };
+export const dateFormat_YY_MM_DY_timeStamp = (dateMillis:number) => {
+  if (dateMillis === null) return "-";
+  const date = new Date(dateMillis);
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+  // append 0 if month or day is less than 10
+  const mn = `${month < 10 ? `0${month}` : month}`;
+  const dy = `${day < 10 ? `0${day}` : day}`;
+
+  return `${year}-${mn}-${dy}`;
+};
 
 export const mapMonthToAbbreviation = (month: number): string => {
   switch (month) {

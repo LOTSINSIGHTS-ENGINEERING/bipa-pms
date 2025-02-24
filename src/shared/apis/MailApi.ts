@@ -68,4 +68,39 @@ export default class MailApi {
     const response = await axios.get(uri);
     return response;
   }
+  async sendMail1(to: string[], from: string, subject: string, message: string) {
+    const body = {
+      from: from,
+      to: to.join(", "),
+      subject,
+      message,
+    };
+
+    const uri = `${this.API_URI}${new URLSearchParams(body)}`;
+    const response = await axios.get(uri);
+    return response;
+  }
+
 }
+
+export const RESUBMISSION_EMAIL = (
+  name: string | null = "",
+  recipientEmail: string
+) => {
+  const MY_SUBJECT = `Resubmission`;
+  const MY_BODY = [
+    `Dear ${name},`,
+    "",
+    "Your submission requires resubmission.",
+    "",
+    "Please review the feedback and submit again.",
+    "",
+    "Sincerely,",
+    "E-Performance System",
+  ];
+
+  return {
+    MY_SUBJECT: MY_SUBJECT,
+    MY_BODY: MY_BODY.join("<br/>"),
+  };
+};

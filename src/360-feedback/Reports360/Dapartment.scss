@@ -1,0 +1,90 @@
+// Department.scss
+
+.department-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  .loader {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .ratings-tables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+
+    .section {
+      flex: 1 1 calc(33.333% - 20px);
+      min-width: 300px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th, td {
+          padding: 12px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+
+        th {
+          background-color: #e0e0e0;
+          font-weight: bold;
+        }
+
+        tr:last-child td {
+          border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+      }
+    }
+
+    .highest-rated {
+      h2 {
+        color: #2e7d32;
+      }
+    }
+
+    .lowest-rated {
+      h2 {
+        color: #c62828;
+      }
+    }
+
+    .all-departments {
+      h2 {
+        color: #1565c0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .department-container {
+    .ratings-tables {
+      flex-direction: column;
+
+      .section {
+        min-width: 100%;
+      }
+    }
+  }
+}

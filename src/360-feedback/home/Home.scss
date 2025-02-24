@@ -1,0 +1,126 @@
+// body {
+//     font-family: 'Lexend', sans-serif; /* Add fallback font */
+//     font-style: normal; 
+//   }
+
+.background-container {
+
+    p{
+        color: white;
+    }
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container, .container2, .container3, .container4 {
+        width: 90%;
+        background-color: #0097AF;
+        padding: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+    .container .heading{
+
+        text-align: start;
+        
+    }
+   .container-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width as needed */
+    grid-gap: 20px; 
+    }
+    .container .heading p {
+        text-align: left;
+       
+    }
+    .container-info p {
+        margin-bottom: 1px;
+         margin-top:1px;
+         font-weight: bold;
+         font-size: 14px;
+        
+    }
+    .mini-headings {
+        font-weight: bolder;
+        font-size: 16px;
+    }
+    
+    .column {
+        display: flex;
+        flex-direction: column;
+       align-items: center; 
+        text-align: center; 
+        font-size: 9.5px;
+    }
+    .heading {
+        
+        font-size: 20px;
+        display: inline;
+        
+        
+    }
+    
+    .heading4 {
+        font-size: 19px;
+        text-align: center;
+    }
+   
+    .container4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .image-container {
+        margin-top: 20px;
+    }
+    
+    .scale-points {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-top: 10px;
+        color: white;
+    }
+    
+    .scale-point {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .lastP{
+       text-align: left;
+       margin-top: 40px;
+       padding: 10px;
+    }
+    .lastP p {
+        display: inline-block;
+        text-align: left ;
+        font-size: 16px;
+        padding: -17px;
+    }
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-left: 0; /* Reset margin-left */
+        text-align: left; /* Align text to the left */
+    }
+    .container, .container2, .container3, .container4,  h4 {
+        
+            margin-bottom: 63px;
+            display: inline-block;
+            align-self: flex-start;
+            overflow-wrap: break-word;
+            font-family: 'Lexend';
+            font-weight: 200;
+            font-size: 20px;
+            color: #FFFFFF;
+          }
+
+    }
+    

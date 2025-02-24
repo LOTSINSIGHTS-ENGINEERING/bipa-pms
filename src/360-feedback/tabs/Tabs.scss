@@ -1,0 +1,109 @@
+$primary-color: #093545;
+$text-color: #000000;
+$hover-color: lighten($primary-color, 10%);
+$active-color: darken($primary-color, 10%);
+$dropdown-bg: #ffffff;
+$dropdown-text: #333333;
+
+.tab-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 20px 0 0 0; 
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 480px) {
+    margin-right: 0;
+    width: 100%;
+    display: block;
+  }
+}
+
+.tab-button {
+  background-color: transparent;
+  color: $text-color;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &.active {
+    border-bottom: 2px solid $primary-color;
+    color: $primary-color;
+  }
+
+  .tab-icon {
+    margin-right: 8px;
+    vertical-align: middle;
+
+    // Responsive adjustments
+    @media (max-width: 480px) {
+      margin-right: 5px;
+    }
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  background-color: $dropdown-bg;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+
+  // Responsive adjustments
+  @media (max-width: 480px) {
+    min-width: 100%;
+  }
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 8px 20px;
+    color: $dropdown-text;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($dropdown-bg, 10%);
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+      padding: 8px 15px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+}

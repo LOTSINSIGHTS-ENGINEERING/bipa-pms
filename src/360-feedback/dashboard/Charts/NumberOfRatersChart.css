@@ -1,0 +1,23 @@
+/* General chart wrapper styling */
+.chart-wrapper {
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Chart container for responsive behavior */
+.chart-container {
+  position: relative;
+  height: 400px; /* Adjust height as needed */
+}
+
+/* Heading style */
+.chart-wrapper h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #004d4d; /* Matching the dark teal color */
+  margin-bottom: 1rem;
+}

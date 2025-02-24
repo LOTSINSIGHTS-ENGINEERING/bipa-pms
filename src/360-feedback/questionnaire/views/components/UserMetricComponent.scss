@@ -1,0 +1,20 @@
+.metrics-block {
+  display:flex;
+  flex-direction: column;
+  position: absolute;
+  left: 67.85%;
+  right: 9.24%;
+  top: 5.65%;
+  bottom: 92.61%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding:2rem;
+  .numbers {
+    position: absolute;
+    left: 71.88%;
+    right: 13.33%;
+    top: 7.03%;
+    bottom: 92.61%;
+  }
+}

@@ -1,0 +1,24 @@
+/* General chart wrapper styling */
+.chart-wrapper {
+  margin: 0.5rem 0; /* Reduce margin for a smaller overall size */
+  padding: 1rem; /* Reduce padding for a smaller overall size */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce shadow for a lighter effect */
+  background-color: #fff;
+}
+
+/* Chart container for responsive behavior */
+.chart-container {
+  position: relative;
+  height: 300px; /* Decrease height for a more compact chart */
+}
+
+/* Heading style */
+.chart-wrapper h2 {
+  text-align: center;
+  font-size: 1.25rem; /* Reduce font size for a smaller heading */
+  font-weight: 600;
+  color: #004d4d; /* Matching the dark teal color */
+  margin-bottom: 0.5rem; /* Reduce bottom margin */
+}
+

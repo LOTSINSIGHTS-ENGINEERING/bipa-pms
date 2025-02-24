@@ -1,0 +1,147 @@
+$primary-color: #3bf0cf;
+$secondary-color: #2ce69b;
+$background-color: #E1EFFA;
+$column-background: #ffffff;
+$text-color: #333333;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: $background-color;
+  min-height: 100vh;
+  gap: 2rem;
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .kanban-column {
+    flex: 1;
+    background-color: $column-background;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px $shadow-color;
+    padding: 1.5rem;
+    transition: $transition;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+
+    @media (max-width: 1024px) {
+      padding: 1.25rem;
+      max-height: calc(100vh - 3.5rem);
+    }
+
+    @media (max-width: 768px) {
+      max-height: initial;
+      padding: 1rem;
+    }
+
+    &:hover {
+      box-shadow: 0 10px 20px $shadow-color;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: $text-color;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid $secondary-color;
+
+      @media (max-width: 768px) {
+        font-size: 1.3rem;
+        padding-bottom: 0.4rem;
+      }
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+      padding-right: 0.5rem;
+
+      @media (max-width: 768px) {
+        max-height: initial;
+      }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $background-color;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $secondary-color;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.request-card {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  border-radius: 10px;
+  padding: 1rem;
+  color: $column-background;
+  transition: $transition;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    padding: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px $shadow-color;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  .due-date {
+    font-weight: bold;
+    color: #ffcc00;
+
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+    }
+  }
+}

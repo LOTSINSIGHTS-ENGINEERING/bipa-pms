@@ -1,0 +1,30 @@
+.questions-page{
+ padding: 2rem;
+ background-color: #f5f7fa;
+ min-height: 100vh;
+
+.button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 2rem;
+      }
+      
+      .create-values-button {
+        background-color: #093545;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: darken(#093545, 10%);
+        }
+  
+        svg {
+          margin-left: 8px;
+        }
+  
+      }
+}

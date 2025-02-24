@@ -1,4 +1,43 @@
 const MODAL_NAMES = {
+  THREE_SIXTY_FEEDBACK: {
+    //value modals
+    CREATE_VALUE_MODAL: "create-value-modal",
+    EDIT_VALUE_MODAL: "edit-value-modal",
+    UPDATE_VALUE_MODAL: "update-value-modal",
+    DELETE_VALUE_MODAL: "delete-value-modal",
+
+    //leadership modals
+    CREATE_LEADERSHIP_MODAL: "create-leadership-modal",
+    EDIT_LEADERSHIP_MODAL: "edit-leadership-modal",
+    UPDATE_LEADERSHIP_MODAL: "update-leadership-modal",
+    DELETE_LEADERSHIP_MODAL: "delete-leadership-modal",
+
+    //project modals
+    CREATE_PROJECT_MODAL: "create-project-modal",
+    EDIT_PROJECT_MODAL: "edit-project-modal",
+    UPDATE_PROJECT_MODAL: "update-project-modal",
+    DELETE_PROJECT_MODAL: "delete-project-modal",
+
+    //rating term
+    CREATE_RATING_TERM:"create-rating-term",
+    EDIT_RATING_TERM:"edit-rating-term",
+
+    //template modals
+    CREATE_TEMPLATE_MODAL: "create-service-modal",
+    EDIT_TEMPLATE_MODAL: "edit-service-modal",
+    UPDATE_TEMPLATE_MODAL: "update-service-modal",
+    DELETE_TEMPLATE_MODAL: "delete-service-modal",
+
+    //preview
+    QUESTIONNAIRE_PREVIEW: "questionnaire-preview",
+
+    //ALERTS
+    SUCCESSFULLY_SUBMITTED_MODAL: "successfully-submitted-modal",
+    SUCCESSFULLY_REQUESTED_MODAL: "successfully-requested-modal",
+    SUCCESSFULLY_STARTED_SESSION_MODAL:"successfully-started-session",
+    SUCCESSFULLY_ENDED_SESSION_MODAL:"successfully-ended-session-modal",
+    SUCCESSFULLY_Deleted_MODAL: "successfully-deleted-modal",
+  },
   EXECUTION: {
     VIEW_REVIEW_MODAL: "view-review-modal",
     MAP_OVERVIEW_MODAL: "map-overview-modal",
@@ -89,6 +128,7 @@ const MODAL_NAMES = {
   PERFORMANCE_REVIEW: {
     REVIEW_MODAL: "performance-review-modal",
     GIVE_REVIEW_MODAL: "give-review-modal",
+    MAIL_ALL_EMPLOYEES_MODAL: "mail-all-employees-modal",
   },
   PROOF_OF_WORK: {
     FOLDER_MODAL: "folder-modal",

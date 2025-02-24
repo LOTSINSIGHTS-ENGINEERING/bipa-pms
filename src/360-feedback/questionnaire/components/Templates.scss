@@ -1,0 +1,155 @@
+
+$primary-color: #3bf0cf;
+$secondary-color: #2ce69b;
+$text-color: #333;
+$background-color: #E1EFFA;
+$card-background: #ffffff;
+$border-radius: 10px;
+$transition: all 0.3s ease;
+
+.value-page {
+  background-color: $background-color;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: $text-color;
+
+  .user-rating-container {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: $card-background;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: $transition;
+
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .user-block {
+      padding: 2rem;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: $primary-color;
+
+        span {
+          font-weight: bold;
+          color: $secondary-color;
+        }
+      }
+
+      .user-information {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+
+        .image {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, $primary-color, $secondary-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .avatar-initials {
+            font-size: 2.5rem;
+            color: $card-background;
+            font-weight: bold;
+          }
+        }
+
+        .user-detail-block {
+          flex: 1;
+          min-width: 200px;
+
+          p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+          }
+
+          h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: $text-color;
+          }
+        }
+
+        .temp-container {
+          flex-basis: 100%;
+          margin-top: 1rem;
+
+          h3 {
+            font-size: 1.2rem;
+            color: $primary-color;
+            margin-bottom: 0.5rem;
+          }
+
+          .temp-input {
+            input {
+              width: 100%;
+              padding: 0.75rem;
+              border: 1px solid #ddd;
+              border-radius: $border-radius;
+              font-size: 1rem;
+              transition: $transition;
+
+              &:disabled {
+                background-color: #f0f0f0;
+                cursor: not-allowed;
+              }
+
+              &:focus {
+                outline: none;
+                border-color: $primary-color;
+                box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .questionnaire-container {
+    margin-top: 2rem;
+    background-color: $card-background;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: $transition;
+
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .value-page {
+    padding: 1rem;
+
+    .user-rating-container {
+      .user-block {
+        .user-information {
+          flex-direction: column;
+          align-items: flex-start;
+
+          .image {
+            margin-bottom: 1rem;
+          }
+
+          .user-detail-block {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

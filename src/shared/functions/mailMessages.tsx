@@ -33,7 +33,35 @@ export const MAIL_SCORECARD_DRAFT_SUBMITTED_MANAGER = (
     BODY: BODY.join("<br/>"),
   };
 };
+//* User TEMPLATE VIEW EMAIL */
+export const USER_TEMPLATE_VIEW = (
+  heading: string,
+  description: string,
+  reasonForRequest: string,
+  dueDate: number,
+  templateId: string
+) => {
+  const MY_SUBJECT = `New Template Request: ${heading}`;
+  const MY_BODY = [
+    `<p>${greeting},</p>`,
+    `<p>Here are the details of the new template request:</p>`,
+    `<ul>`,
+    `<li><strong>Heading:</strong> ${heading}</li>`,
+    `<li><strong>Description:</strong> ${description}</li>`,
+    `<li><strong>Reasons for Request:</strong> ${reasonForRequest}</li>`,
+    `<li><strong>Due Date:</strong> ${dueDate}</li>`,
+    `<li><strong>Selected Template ID:</strong> ${templateId}</li>`,
+    `</ul>`,
+    `<p><a href="${link}">Click here</a> for more details</p>`,
+    `<p>Regards,</p>`,
+    `<p>${username}</p>`,
+  ];
 
+  return {
+    MY_SUBJECT: MY_SUBJECT,
+    MY_BODY: MY_BODY.join(""),
+  };
+};
 //projects
 export const MAIL_PROJECT_ADDED = (employeeName: string, project: string) => {
   const MY_SUBJECT = `${project}`;

@@ -1,0 +1,231 @@
+.dashboard-container {
+  padding: 20px;
+  background-color: #F5F5F5;
+}
+
+.about-button-container {
+  margin-bottom: 20px;
+}
+
+.cards-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap onto multiple lines */
+  gap: 20px; /* Adjusted for even spacing */
+  justify-content: center; /* Center the cards horizontally */
+  background-color: #F5F5F5;
+  padding: 20px;
+}
+
+.info-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 15px 20px; /* Adjust padding for better spacing */
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1 1 300px; /* Make cards responsive and set a minimum width */
+  max-width: 350px; /* Adjust width to better fit content */
+  min-width: 250px; /* Minimum width for smaller screens */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .icon-container {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px; /* Increased height */
+    width: 50px; /* Increased width */
+    margin-right: 20px; /* Space between icon and text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    font-size: 24px; /* Adjust icon size */
+    color: #1a73e8; /* Default icon color */
+  }
+
+  .card-label {
+    font-size: 16px; /* Increased font size */
+    font-weight: 600;
+    color: #333;
+    margin: 0; /* Ensure no extra margin */
+  }
+
+  .card-value {
+    font-size: 18px; /* Increased font size */
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+  }
+
+  .card-subtext {
+    font-size: 14px; /* Increased font size */
+    color: #888;
+  }
+
+  &.card-rating .icon-container {
+    background-color: #e1effa;
+    color: #1a73e8;
+  }
+
+  &.card-surveys .icon-container {
+    background-color: #e1effa;
+    color: #1a73e8;
+  }
+
+  &.card-requests .icon-container {
+    background-color: #e1effa;
+    color: #1a73e8;
+  }
+
+  &.card-score .icon-container {
+    background-color: #fdecea;
+    color: #d93025;
+  }
+
+  &.card-score .card-value {
+    color: #d93025; 
+  }
+}
+
+
+.centralized-text {
+  background-color: #F5F5F5;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+.info-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer; /* Change cursor to pointer to indicate clickability */
+  text-align: center; /* Center the text */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for the hover effect */
+  min-width: 250px;
+  border-radius: 20px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align text */
+  text-align: center;
+}
+
+.card-label {
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold;
+  margin-bottom: 5px; /* Adjust margin */
+}
+
+.card-value {
+  font-size: 14px; /* Adjust font size */
+  margin-bottom: 10px; /* Adjust margin */
+  font-weight: bold;
+}
+
+.card-button-container {
+  display: flex;
+  justify-content: flex-end; /* Move button to the right */
+  align-items: flex-end; /* Ensure button aligns at the bottom */
+}
+
+.card-button {
+  padding: 4px 8px; /* Adjust padding */
+  background-color: #0d0e0fc5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Adjust margin */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px; /* Adjust padding */
+}
+/* Specific card background colors */
+/* Specific card background colors */
+.card-rating,
+.card-surveys,
+.card-requests,
+
+.card-score {
+  background-color: #f7f8f7; /* light green */
+}
+
+.polar-chart-container,
+
+.bar-chart-container {
+  background:  #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.polar-chart-container {
+  flex: 3;
+  margin-right: 20px;
+}
+
+.bar-chart-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gray-text {
+  color: #888;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 18px;
+}
+
+
+.flex-container > * {
+  flex: 1;
+}

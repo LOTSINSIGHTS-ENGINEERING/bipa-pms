@@ -1,0 +1,21 @@
+.add-question{
+background-color: #F2F2F2; /* Blue color for both buttons */
+  color: #093545; /* White text color */
+  border: none; /* No border */
+  padding: 2px 8px; /* Padding */
+  cursor: pointer; /* Cursor style */
+  border-radius: 10px; /* Rounded corners */
+  width: 200px;
+  height: 49px; 
+  margin-left:1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Lexend', sans-serif; /* Add fallback font */
+  font-style: normal; 
+}
+
+input {
+    font-family: 'Lexend', sans-serif; /* Add fallback font */
+    font-style: normal; 
+    width: 200px;
+    height: 49px; 
+}

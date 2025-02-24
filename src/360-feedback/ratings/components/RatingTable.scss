@@ -1,0 +1,103 @@
+/* Ensure you target the header cell within the DataGrid */
+.MuiDataGrid-root .MuiDataGrid-columnHeaderTitle {
+  font-weight: bold !important;
+}
+
+.rating-table-container {
+  padding: 20px;
+  background-color: #f0f2f5; /* Light background color */
+  font-family: Arial, sans-serif; /* Example: Change font family as needed */
+}
+
+.rating-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px; /* Add some bottom padding for separation */
+  border-bottom: 1px solid #ddd; /* Bottom border for separation */
+}
+
+
+.rating-table-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0; /* Remove default margin for cleaner look */
+}
+
+.rating-table-actions {
+  display: flex;
+  gap: 10px; /* Spacing between buttons */
+}
+
+.rating-table-button {
+  background-color: #093545;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #093545c1; /* Darker shade on hover */
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.rating-table-content {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 4px;
+  margin-top: 20px;
+  padding: 20px; /* Add padding inside content */
+}
+
+.rating-table-grid {
+  height: 500px;
+  width: 100%;
+}
+
+.rating-table-popover {
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.rating-table-flag-icon {
+  color: #ccc; /* Default gray color */
+
+  &.active,
+  &:hover {
+    color: rgba(233, 69, 69, 0.73); /* Red color on click and hover */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .rating-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rating-table-title {
+    margin-bottom: 10px;
+  }
+
+  .rating-table-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rating-table-button {
+    margin-left: 0;
+    width: 100%; /* Full width for buttons in mobile view */
+  }
+}

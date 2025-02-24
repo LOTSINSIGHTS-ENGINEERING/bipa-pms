@@ -1,0 +1,48 @@
+/* Add margin to the top of the card */
+.uk-margin-top-10 {
+  margin-top: 70px; /* Adjust the value as needed */
+}
+
+/* Styling for the feedback button */
+.feedback-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  background-color: #093545; /* Dark blue-green color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  svg {
+    fill: white;
+    margin-right: 8px;
+  }
+
+  span {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    background-color: #075164; /* Darker blue-green color */
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(9, 53, 69, 0.5); /* Focus shadow */
+  }
+
+  &:active {
+    transform: translateY(1px); /* Button click effect */
+  }
+}
+
+/* Ensure the card has the appropriate styling */
+.uk-card {
+  padding: 20px; /* Add padding to card */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}

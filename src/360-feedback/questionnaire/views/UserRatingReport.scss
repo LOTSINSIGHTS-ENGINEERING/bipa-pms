@@ -1,0 +1,138 @@
+// Variables
+$primary-bg-color: #E1EFFA;
+$secondary-bg-color: #093545;
+$text-color: #333;
+$border-color: #ccc;
+$hover-color: darken($primary-bg-color, 10%);
+
+.box-container {
+  background-color: $primary-bg-color;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+// Container for the main paper component
+.paper-container {
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.rating-table-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.reports-table-button {
+  margin-left: 10px;
+  background-color: $secondary-bg-color;
+  color: white;
+  
+  &:hover {
+    background-color: lighten($secondary-bg-color, 10%);
+  }
+}
+
+.loading-error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $primary-bg-color;
+}
+
+// Modal backdrop styling
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-details-modal {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  max-height: 80vh;
+
+  @media (max-width: 768px) {
+    max-width: 95%;
+    width: 95%;
+    padding: 12px;
+    max-height: 90vh;
+  }
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.details-content {
+  h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: $secondary-bg-color;
+  }
+}
+
+.table-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.table-header {
+  background-color: $secondary-bg-color;
+  th {
+    color: white;
+  }
+}
+
+// DataGrid styles
+.MuiDataGrid-root {
+  background-color: white;
+  border: 1px solid $border-color;
+}
+
+.MuiDataGrid-cell {
+  border-bottom: 1px solid $border-color;
+}
+
+.MuiDataGrid-columnHeader {
+  background-color: $secondary-bg-color;
+  color: white;
+}
+
+.MuiDataGrid-row {
+  &:nth-of-type(odd) {
+    background-color: $primary-bg-color;
+  }
+  
+  &:hover {
+    background-color: $hover-color;
+  }
+}

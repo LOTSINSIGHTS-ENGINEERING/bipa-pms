@@ -1,0 +1,14 @@
+.online-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  .online {
+    background-color:green;; // Green color for online status
+  }
+  
+  .offline {
+    background-color: red; // Red color for offline status
+  }

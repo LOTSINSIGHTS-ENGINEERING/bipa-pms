@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap");
+
+.blue-curved-container {
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Smooth transition on hover */
+  transition: transform 0.2s ease; /* Smooth transition on hover */
+  position: relative; /* Ensure the criteria box is positioned relatively */
+  overflow: hidden;
+  margin-bottom: 20px; /* Add margin to create space between blue-curved-containers */
+  background-color: #daf7fc;
+  font-family: "Lexend", sans-serif;
+  border-color: #0097af;
+}
+.required-inputs{
+  display:flex;
+  flex-direction: row;
+}
+.questionnaire-submit-button {
+  left: 23.4%;
+  right: 66.88%;
+  top: 75.83%;
+  bottom: 23.41%;
+  background: #2ebda6;
+  border-radius: 8px;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  color: white;
+}
+.questionnaire-submit-button:hover {
+  cursor: pointer;
+}
+.white-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #ffffff; /* White background */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 10px; /* Adjust padding to center content vertically */
+  z-index: 1; /* Ensure white strip is above content */
+}
+.statement p {
+  font-size: 16px; /* Set font size to 16 pixels */
+}
+.criteria-box {
+  margin-top: 70px; /* Add margin to create space between white strip and content */
+}
+
+.criteria {
+  /* Define styles for each criteria */
+  margin-bottom: 20px; /* Add margin to separate criteria */
+  h3 {
+    margin-left: 10px;
+    font-size: 20px; /* Set font size to 20 pixels */
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #093545;
+  }
+}
+
+.statement {
+  /* Define styles for each statement */
+  .inner-statement {
+    display: flex; /* Make the rating buttons flex container */
+    justify-content: flex-start; /* Align buttons to the left */
+    flex-direction: row;
+  }
+  margin-bottom: 10px; /* Add margin to separate statements */
+}
+
+.rating-container {
+  display: flex; /* Make the rating buttons flex container */
+  justify-content: flex-start; /* Align buttons to the left */
+  flex-direction: row;
+  
+  .rating {
+    display:flex;
+    flex-direction:row;
+    .rating-checkbox {
+      height: 49px;
+      width: 62px;
+      cursor: pointer;
+      margin-right: 20px;
+      color: white; /* Set the text color */
+      background-color: #2ebda6; /* White background */
+      border-radius: 5px;
+    }
+ 
+  }
+}
+
+
+.statement-buttons {
+  display: flex;
+  gap: 5px; /* Adjust the gap between buttons */
+
+  .edit-statement,
+  .delete-statement {
+    background-color: transparent;
+    color: #093545; /* Dark blue text color */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Faint outline */
+    padding: 6px 14px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    border-radius: 10px; /* Rounded corners */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+     }
+
+  .edit-statement:hover {
+    border-color: #009688; /* Teal outline on hover */
+    color: #009688; /* Teal text color on hover */
+  }
+
+  .delete-statement {
+    color: #f44336; /* Red color for delete button */
+  }
+
+  .delete-statement:hover {
+    border-color: #f44336; /* Red outline on hover */
+    color: #f44336; /* Red text color on hover */
+  }
+}
+
+.rating-text {
+  margin-bottom: 5px; /* Adjust margin as needed */
+}
+  .rating-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+  }
+  
+  .rating-text {
+    margin-bottom: 5px; /* Adjust margin as needed */
+  }
+  
+  .rating-comment {
+    font-size: 14px; /* Adjust font size as needed */
+    color: #555; /* Set color for the rating text and comments */
+  }
+  
+
+.rating-container button {
+  color: white; /* Set the text color */
+  background-color: #2ebda6; /* White background */
+  border-radius: 5px; /* Set border radius */
+  width: 62px; /* Set button width */
+  height: 49px; /* Set button height */
+  cursor: pointer;
+  margin-right: 20px; /* Add margin between buttons */
+}
+.rating-container .rating-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #2ebda6; /* White background */
+  border-radius: 5px; /* Set border radius */
+  width: 62px; /* Set button width */
+  height: 49px; /* Set button height */
+  cursor: pointer;
+  margin-right: 20px; /* Add margin between buttons */
+}
+.rating-container .rating-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Define the size of the custom checkbox */
+  width: 62px;
+  height: 49px;
+  /* Set the background color of the custom checkbox */
+  background-color: #2ebda6; 
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px; 
+  position: relative;
+}
+.rating-container .rating-checkbox:checked::before {
+  display: block;
+}
+
+.rating-container .rating-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 6px;
+  border-left: 3px solid white; 
+  border-bottom: 3px solid white; 
+  transform: rotate(-45deg);
+  display: block;
+}
+.rating-container .rating-checkbox:checked::before {
+  display: block;
+}
+.input-features {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input-group {
+  flex: 30%; /* Each input-group takes 100% width */
+  margin-bottom: 20px; /* Add margin to create space between input-groups */
+}
+
+
+.input-comm {
+  border: 1px solid #daf7fc;
+  width: 1040px; /* Set width to 330px */
+  height: 136px;
+  border-radius: 10px;
+  margin-top: 5px;
+ // position: relative; /* Add position relative */
+}
+.input-container 
+
+.full-width {
+  flex: 1; /* Make input take up remaining space */
+}
+
+.input-container input {
+  width: calc(100% - 20px); /* Set input width to 100% minus padding */
+  border: none;
+  outline: none;
+  background: transparent;
+}
+  .blue-container {
+    background-color: #daf7fc; /* Blue background color */
+    border-radius: 5px; /* Curve the edges */
+    padding: 5px; /* Add padding to separate the input */
+    width: calc(100% - 20px); /* Set width to 100% minus padding and border */
+    height: calc(100% - 20px); /* Set height to 100% minus padding and border */
+    position: absolute; /* Position absolute */
+    top: 10px; /* Align to the top of the input container */
+    left: 10px; /* Align to the left of the input container */
+  }
+  
+  .icon-banner {
+    position: absolute;
+    top: 10px; /* Adjust this value to position the banner */
+    right: 10px; /* Adjust this value to position the banner */
+    z-index: 2; /* Ensure the banner is above the textarea */
+  }
+  
+  .blue-textarea {
+    background-color: #daf7fc; /* Blue background color */
+    border-radius: 10px; /* Curve the edges */
+    padding: 5px; /* Add padding to separate the input */
+    width: calc(100% - 20px - 30px); /* Set width to 100% minus padding, border, and banner width */
+    height: calc(100% - 20px); /* Set height to 100% minus padding and border */
+    position: absolute; /* Position absolute */
+    top: 10px; /* Align to the top of the input container */
+    left: 10px; /* Align to the left of the input container */
+  }
+
+  .edit-button,
+.delete-button {
+  background-color: transparent; /* Transparent background */
+  color: #093545; /* Dark blue text color */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Faint outline */
+  padding: 6px 14px; /* Padding */
+  cursor: pointer; /* Cursor style */
+  border-radius: 10px; /* Rounded corners */
+  width: 70px;
+  height: 49px;
+  transition: border-color 0.3s, color 0.3s; /* Transition for smooth color change */
+}
+
+.edit-button {
+  margin-right: 5px; /* Right margin for edit button */
+  color: #009688; /* Teal color for edit button */
+}
+
+.delete-button {
+  color: #f44336; /* Red color for delete button */
+}
+
+.edit-button:hover {
+  border-color: #009688; /* Teal outline on hover */
+  color: #009688; /* Teal text color on hover */
+}
+
+.delete-button:hover {
+  border-color: #f44336; /* Red outline on hover */
+  color: #f44336; /* Red text color on hover */
+}
+
+
