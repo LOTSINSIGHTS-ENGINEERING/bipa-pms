@@ -29,7 +29,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import JobCardTab from "../Components/tabs-new/JobCardTab";
 import Tabs from "../Components/tabs-new/JobCardTab";
 
-
 const CreatedJoCardMain = observer(() => {
   const navigate = useNavigate();
   const { api, store } = useAppContext();
@@ -173,8 +172,7 @@ const CreatedJoCardMain = observer(() => {
                     Create New
                   </button> */}
                   <BlueButton onClick={onCreateJobCard}>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANtJREFUSEtjZKAxYKSx+Qz0s+Drmzf+jAwMHf8ZGDSw+Or0v9+/vXklJV+T6mO4D76+efOEgYFBGo8B1/+wstrw8/O/I8USZAv+k6IRn0MY/v0r4RYT2wZSQwsLGBgYGe9xCwsrY7WAW0SEooj/+uYNOCRg5mD4YEAtQHcdtnigyAdD0wKYq3ElS/Q4IzmIaG4BssuHZhzQ1QfElFUkRzIxhuLzJXJR8ZCBgUGOVANxqH/ALSKiiF7YgSqczv8MDOoUWfL//yWG//8rMYprigzFo5miopkYR9HcAgDWeq4ZbeuYeQAAAABJRU5ErkJggg==" />{" "}
-                    Create New
+                    <span uk-icon="plus"></span> Create New
                   </BlueButton>
                 </ErrorBoundary>
               }
