@@ -26,7 +26,7 @@ body {
 
 /* Updated Table Header Styling */
 .custom-table th.header-cell {
-  background-color: #9e0a2f !important; /* Maroon background for table header *//* Black background for table header */
+  background-color:  #F89448 !important; /* Maroon background for table header *//* Black background for table header */
   color: #fff; /* White text color */
   height: 50px !important;
   font-weight: bold;
@@ -85,7 +85,7 @@ body {
 }
 
 .pagination-button {
-  background-color: #9e0a2f !important; /* Maroon background for pagination button */
+  background-color:  #F89448 !important; /* Maroon background for pagination button */
   color: white;
   border: none;
   padding: 5px 10px;
@@ -98,7 +98,7 @@ body {
 }
 
 .pagination-button:hover {
-  background-color: #ec2027 !important; /* Brighter maroon on hover */
+  background-color:  #F89448 !important; /* Brighter maroon on hover */
 }
 
 .pagination-button:disabled {

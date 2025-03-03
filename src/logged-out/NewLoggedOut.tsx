@@ -90,7 +90,7 @@ const LoggedOut: React.FC = observer(() => {
       <div
         className="login-container"
         style={{
-          backgroundImage: "url(../../../../public/background.jpg)",
+          // backgroundImage: "url(/background.jpg)",
           backgroundSize: "cover",
         }}
       >
@@ -98,14 +98,10 @@ const LoggedOut: React.FC = observer(() => {
           <div className="login-left">
             <h2>E-Performance Management System</h2>
             <p>
-              Performance Management is an ongoing engagement and communication
-              process involving the supervisor and the subordinate (employees).
+            Catalyzing economic growth and innovation—BIPA’s E-Performance Management System enhances efficiency, tracks progress, and drives accountability for excellence.
             </p>
             <div className="login-illustration">
-              <img
-                src="/mqdefault.jpg"
-                alt="Business Management Illustration"
-              />
+              <img src="/unicomms.png" alt="Business Management Illustration" />
             </div>
           </div>
 
@@ -140,9 +136,9 @@ const LoggedOut: React.FC = observer(() => {
               <div className="input-group">
                 <label>Password</label>
                 <div className="input-wrapper">
-                  {/* <FontAwesomeIcon icon={faEye} className="input-icon" /> */}
                   <input
                     type={passwordType}
+                    className="password-input"
                     placeholder="Enter Password"
                     value={signInForm.password}
                     onChange={(e) =>
@@ -153,15 +149,11 @@ const LoggedOut: React.FC = observer(() => {
                     }
                     required
                   />
-                  <button
-                    type="button"
-                    className="toggle-password"
+                  <FontAwesomeIcon
+                    icon={passwordType === "password" ? faEyeSlash : faEye}
+                    className="input-icon"
                     onClick={togglePassword}
-                  >
-                    <FontAwesomeIcon
-                      icon={passwordType === "password" ? faEyeSlash : faEye}
-                    />
-                  </button>
+                  />
                 </div>
               </div>
 

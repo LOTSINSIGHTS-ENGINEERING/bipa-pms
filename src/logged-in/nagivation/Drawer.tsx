@@ -182,7 +182,6 @@ const DEV_MODE_DRAWER = () => {
           </ul>
         </li>
 
-
         <li className="list-item uk-parent">
           <NavLink to={"execution"} className="navlink">
             <FontAwesomeIcon
@@ -249,7 +248,7 @@ const DEV_MODE_DRAWER = () => {
             Portfolio of evidence
           </NavLink>
         </li>
-        <li className="list-item uk-parent">
+        {/* <li className="list-item uk-parent">
           <NavLink to={"feedback_360"} className="navlink">
             <FontAwesomeIcon
               icon={faComments}
@@ -279,7 +278,7 @@ const DEV_MODE_DRAWER = () => {
               </NavLink>
             </li>
           </ul>
-        </li>
+        </li> */}
 
         <li className="list-item uk-parent">
           <NavLink to="job-cards" className="navlink">
@@ -443,7 +442,7 @@ const DIRECTOR_USER_DRAWER = () => {
             </li>
           </ul>
         </li>
-        <li className="list-item uk-parent">
+        {/* <li className="list-item uk-parent">
           <NavLink to={"feedback_360"} className="navlink">
             <FontAwesomeIcon
               icon={faComments}
@@ -473,7 +472,7 @@ const DIRECTOR_USER_DRAWER = () => {
               </NavLink>
             </li>
           </ul>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
@@ -513,7 +512,7 @@ const MD_USER_DRAWER = () => {
           </ul>
         </li>
 
-        <li className="list-item uk-parent">
+        {/* <li className="list-item uk-parent">
           <NavLink to={"feedback_360"} className="navlink">
             <FontAwesomeIcon
               icon={faComments}
@@ -543,7 +542,7 @@ const MD_USER_DRAWER = () => {
               </NavLink>
             </li>
           </ul>
-        </li>
+        </li> */}
 
         <li className="list-item uk-parent">
           <NavLink to="job-cards" className="navlink">
@@ -893,7 +892,7 @@ const SUPER_USER_DRAWER = () => {
           </ul>
         </li>
 
-        <li className="list-item uk-parent">
+        {/* <li className="list-item uk-parent">
           <NavLink to={"feedback_360"} className="navlink">
             <FontAwesomeIcon
               icon={faComments}
@@ -923,7 +922,7 @@ const SUPER_USER_DRAWER = () => {
               </NavLink>
             </li>
           </ul>
-        </li>
+        </li> */}
 
         {/* execution */}
 
@@ -1077,7 +1076,7 @@ const EXECUTIVE_USER_DRAWER = () => {
             </li>
           </ul>
         </li>
-        <li className="list-item uk-parent">
+        {/* <li className="list-item uk-parent">
           <NavLink to={"feedback_360"} className="navlink">
             <FontAwesomeIcon
               icon={faComments}
@@ -1107,7 +1106,7 @@ const EXECUTIVE_USER_DRAWER = () => {
               </NavLink>
             </li>
           </ul>
-        </li>
+        </li> */}
 
         <li className="list-item uk-parent">
           <NavLink to="job-cards" className="navlink">
@@ -1989,7 +1988,7 @@ const SUPERVISOR_USER_DRAWER = () => {
           </ul>
         </li>
 
-        <li className="list-item uk-parent">
+        {/* <li className="list-item uk-parent">
           <NavLink to={"feedback_360"} className="navlink">
             <FontAwesomeIcon
               icon={faComments}
@@ -2019,7 +2018,7 @@ const SUPERVISOR_USER_DRAWER = () => {
               </NavLink>
             </li>
           </ul>
-        </li>
+        </li> */}
 
         <li className="list-item">
           <NavLink to={"drive"} className="navlink">

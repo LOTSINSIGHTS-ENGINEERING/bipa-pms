@@ -24,18 +24,18 @@
   cursor: pointer;
   margin: 0 5px; /* Space between tabs */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-  background-color: #9e0a2f; /* Primary base color */
+  background-color:  #F89448; /* Primary base color */
   color: #fff; /* White text for contrast */
   border-radius: 20px; /* Rounded corners for each tab */
 }
 
 .tab.active {
-  background-color: #d62b31ef; /* Active tab color */
+  background-color: #c9600f; /* Active tab color */
   color: #fff; /* White text for the active tab */
 }
 
 .tab:hover {
-  background-color: #b50b2c; /* Slightly darker shade on hover */
+  background-color:  #F89448; /* Slightly darker shade on hover */
 }
 
 .tab-container .tab:first-child {
