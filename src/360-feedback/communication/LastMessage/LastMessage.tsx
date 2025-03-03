@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { IPrivateMessage } from '../../../../shared/models/three-sixty-feedback-models/messages/MessagesModel';
+import { IPrivateMessage } from '../../../shared/models/three-sixty-feedback-models/messages/MessagesModel';
+
 
 interface LastMessageProps {
   userId: string;

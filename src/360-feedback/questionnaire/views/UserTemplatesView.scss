@@ -1,7 +1,9 @@
 .user-templates-view {
   padding: 2rem;
   background-color: #f5f7fa;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; // Ensures it fills the entire screen
 
   .button-container {
     display: flex;
@@ -53,14 +55,14 @@
     }
 
     .watermark {
-      background-color: #f0f4f8; 
+      background-color: #f0f4f8;
       padding: 1rem;
       border-radius: 4px;
       margin-top: 1rem;
       border: 1px dashed #093545; // Optional: dashed border to indicate it’s a watermark
-      font-style: italic; 
+      font-style: italic;
     }
-    
+
     .submit-button {
       background-color: #093545;
       color: #fff;
@@ -80,5 +82,6 @@
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem; /* Added spacing above the table */
   }
 }

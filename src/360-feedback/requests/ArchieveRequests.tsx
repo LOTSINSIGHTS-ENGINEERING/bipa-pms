@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { observer } from "mobx-react-lite";
-import { useAppContext } from "../../../shared/functions/Context";
+
 import RequestTable from "./RequestsTable";
-import { ITemplateRating } from "../../../shared/models/three-sixty-feedback-models/TemplateRating";
+import { useAppContext } from "../../shared/functions/Context";
+import { ITemplateRating } from "../../shared/models/three-sixty-feedback-models/TemplateRating";
 
 const ArchiveRequests = observer(() => {
   const { api, store } = useAppContext();

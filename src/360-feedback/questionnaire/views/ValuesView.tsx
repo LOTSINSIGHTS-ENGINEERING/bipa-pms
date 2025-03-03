@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
-import MODAL_NAMES from "../../../dialogs/ModalName";
-import { useAppContext } from "../../../../shared/functions/Context";
-import showModalFromId from "../../../../shared/functions/ModalShow";
+
 import NewValueModal from "../modals/CreateValueModal";
-import Modal from "../../../../shared/components/Modal";
+
 import "./ValuesViews.scss";
 import { CriteriaBox } from "../components/CriteriaBox";
 import EditValueModal from "../modals/EditValueModal";
+
+import MODAL_NAMES from "../../../logged-in/dialogs/ModalName";
+import { useAppContext } from "../../../shared/functions/Context";
+import showModalFromId from "../../../shared/functions/ModalShow";
+import Modal from "../../../shared/components/Modal";
 
 const ValuesView = observer(() => {
   const { api, store } = useAppContext();

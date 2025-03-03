@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Select, { SingleValue } from "react-select";
 import "./single.scss"; 
 import searchIcon from "../assets/search.png"; 
-import ErrorBoundary from "../../../../shared/components/error-boundary/ErrorBoundary";
+import ErrorBoundary from '../../../shared/components/error-boundary/ErrorBoundary';
+
 
 export interface IOption {
   value: string;

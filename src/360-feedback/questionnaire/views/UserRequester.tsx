@@ -12,13 +12,14 @@ import RequestSubmittedAlertModal from "../../shared-components/RequestSubmitted
 
 import MODAL_NAMES from "../../../logged-in/dialogs/ModalName";
 import { useAppContext } from "../../../shared/functions/Context";
-import { IProject } from "../../../shared/models/Project";
+
 import { ICommittee } from "../../../shared/models/three-sixty-feedback-models/Committee";
 import { ICommitteeRating, defaultCommitteeRating } from "../../../shared/models/three-sixty-feedback-models/CommitteeRating";
 import { IProjectRating, defaultProjectRating } from "../../../shared/models/three-sixty-feedback-models/ProjectRating";
 import { IServiceRating, defaultServiceRating } from "../../../shared/models/three-sixty-feedback-models/ServiceRating";
 import { IService } from "../../../shared/models/three-sixty-feedback-models/Services";
 import Modal from "../../../shared/components/Modal";
+import { IProject } from "../../../shared/models/three-sixty-feedback-models/Projects";
 
 
 interface IProps {

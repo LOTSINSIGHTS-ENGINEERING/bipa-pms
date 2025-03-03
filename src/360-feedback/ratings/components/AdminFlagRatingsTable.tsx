@@ -125,7 +125,7 @@ const AdminFlagRatingsTable = observer(({ data, description }: IProp) => {
               : { MY_SUBJECT: "", MY_BODY: "" };
 
           try {
-            await api.mail.sendMail(
+            await api.mail.sendMail1(
               [selectedRating.rateeId],
               MY_SUBJECT,
               MY_BODY,
@@ -177,7 +177,7 @@ const AdminFlagRatingsTable = observer(({ data, description }: IProp) => {
             : { MY_SUBJECT: "", MY_BODY: "" };
 
         try {
-          await api.mail.sendMail(
+          await api.mail.sendMail1(
             [selectedRating.rateeId],
             MY_SUBJECT,
             MY_BODY,

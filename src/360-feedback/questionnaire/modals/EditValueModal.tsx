@@ -1,11 +1,12 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { observer } from 'mobx-react-lite';
 import makeAnimated from 'react-select/animated';
-import { IOption } from '../../../../shared/components/single-select/SingleSelect';
-import { useAppContext } from '../../../../shared/functions/Context';
-import { hideModalFromId } from '../../../../shared/functions/ModalShow';
-import MODAL_NAMES from '../../../dialogs/ModalName';
-import { IValue, defaultValue } from '../../../../shared/models/three-sixty-feedback-models/Values';
+import MODAL_NAMES from '../../../logged-in/dialogs/ModalName';
+import { useAppContext } from '../../../shared/functions/Context';
+import { hideModalFromId } from '../../../shared/functions/ModalShow';
+import { IValue, defaultValue } from '../../../shared/models/three-sixty-feedback-models/Values';
+import { IOption } from '../../communication/single-select/SlingleSelect';
+
 
 const EditValueModal = observer(() => {
   const animatedComponents = makeAnimated();

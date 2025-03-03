@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import { ILeadership } from "../../../../shared/models/three-sixty-feedback-models/Leadership";
-import { IValue } from "../../../../shared/models/three-sixty-feedback-models/Values";
+
 import EditLeadershipModal from "../modals/EditLeadershipModal";
-import Modal from "../../../../shared/components/Modal";
-import MODAL_NAMES from "../../../dialogs/ModalName";
-import showModalFromId from "../../../../shared/functions/ModalShow";
-import { useAppContext } from "../../../../shared/functions/Context";
+
 import EditValueModal from "../modals/EditValueModal";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "./CriteriaBox.scss";
@@ -17,6 +13,13 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button/Button";
+
+import MODAL_NAMES from "../../../logged-in/dialogs/ModalName";
+import { useAppContext } from "../../../shared/functions/Context";
+import showModalFromId from "../../../shared/functions/ModalShow";
+import { ILeadership } from "../../../shared/models/three-sixty-feedback-models/Leadership";
+import { IValue } from "../../../shared/models/three-sixty-feedback-models/Values";
+import Modal from "../../../shared/components/Modal";
 
 interface IProps {
   value: (IValue | ILeadership)[];

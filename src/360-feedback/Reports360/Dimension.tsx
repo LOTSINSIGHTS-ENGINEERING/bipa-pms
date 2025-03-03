@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { useAppContext } from "../../../shared/functions/Context";
-import ValueRatingApi from "../../../shared/apis/three-sixty-apis/ValueRatingApi";
-import { IUser } from "../../../shared/models/User";
+
 import "./Dimension.scss";
+import ValueRatingApi from "../../shared/apis/three-sixty-apis/ValueRatingApi";
+import { useAppContext } from "../../shared/functions/Context";
+import { IUser } from "../../shared/models/User";
 
 interface ValueRatings {
   [key: string]: {

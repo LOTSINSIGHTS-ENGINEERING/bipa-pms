@@ -1,17 +1,16 @@
 import { observer } from "mobx-react-lite";
 import "./ratings.scss";
 import RatingsDatatable from "./components/RatingsTable";
-import Toolbar from "../../shared/components/toolbar/Toolbar";
+
 import { Tab } from "../tabs/Tabs";
 import { ChangeEvent, useEffect, useState } from "react";
-import { ICommitteeRating } from "../../../shared/models/three-sixty-feedback-models/CommitteeRating";
-import { ILeadershipRating } from "../../../shared/models/three-sixty-feedback-models/LeadershipRating";
-import { IServiceRating } from "../../../shared/models/three-sixty-feedback-models/ServiceRating";
-import { IProjectRating } from "../../../shared/models/three-sixty-feedback-models/ProjectRating";
-import { useAppContext } from "../../../shared/functions/Context";
-import { IValueRating } from "../../../shared/models/three-sixty-feedback-models/ValueRating";
+
+import { useAppContext } from "../../shared/functions/Context";
+import { ILeadershipRating } from "../../shared/models/three-sixty-feedback-models/LeadershipRating";
+import { ITemplateRating } from "../../shared/models/three-sixty-feedback-models/TemplateRating";
+import { IValueRating } from "../../shared/models/three-sixty-feedback-models/ValueRating";
 import ProjectRatingTable from "./components/ProjectRatingTable";
-import { ITemplateRating } from "../../../shared/models/three-sixty-feedback-models/TemplateRating";
+import Toolbar from "../../logged-in/shared/components/toolbar/Toolbar";
 
 const Reports = observer(() => {
   const [activeTab, setActiveTab] = useState("values");

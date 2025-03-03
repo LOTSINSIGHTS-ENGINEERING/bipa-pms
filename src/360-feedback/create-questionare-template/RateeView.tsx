@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
-import { useAppContext } from "../../../shared/functions/Context";
-import { IRatingSession } from "../../../shared/models/three-sixty-feedback-models/RatingSession";
-import {
-  ITemplates,
-  defaultTemplate,
-} from "../../../shared/models/three-sixty-feedback-models/Templates";
+import { useAppContext } from "../../shared/functions/Context";
+import { IRatingSession } from "../../shared/models/three-sixty-feedback-models/RatingSession";
+import { ITemplates, defaultTemplate } from "../../shared/models/three-sixty-feedback-models/Templates";
+
 
 const RateeView: React.FC = observer(() => {
   const { api, store } = useAppContext();

@@ -50,7 +50,8 @@ import RatingSessionStore from "./three-sixty-feeedback-stores/RatingSessionStor
 import ServiceRatingStore from "./three-sixty-feeedback-stores/ServiceRatingStore";
 import TemplateRatingStore from "./three-sixty-feeedback-stores/TemplateRatingStore";
 import TemplateStore from "./three-sixty-feeedback-stores/TemplateStore";
-import ChatStore from "./three-sixty-feeedback-stores/Chat/ChatStore";
+import ChatStore from "./three-sixty-feeedback-stores/Messages/PrivateMessageChatStore";
+
 
 // import ClientStore from "./job-card-stores/Client";
 // import LabourStore from "./job-card-stores/Labour";

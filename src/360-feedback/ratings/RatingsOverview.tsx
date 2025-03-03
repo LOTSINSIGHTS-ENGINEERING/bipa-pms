@@ -1,15 +1,17 @@
 import { observer } from "mobx-react-lite";
 import { ValueRatingsDoughnut } from "./components/ValueRatingsDonuts";
 import "./ratings.scss";
-import RatingsDatatable from "./components/RatingsTable";
+
 import { LeadershipRatingsDoughnut } from "./components/LeadershipRatingDonut";
-import { useAppContext } from "../../../shared/functions/Context";
+
 import { useEffect, useState } from "react";
-import { ILeadershipRating } from "../../../shared/models/three-sixty-feedback-models/LeadershipRating";
-import { IValueRating } from "../../../shared/models/three-sixty-feedback-models/ValueRating";
+
 import { TemplatesDoughnut } from "./components/TemplatesDonut";
-import { ITemplateRating } from "../../../shared/models/three-sixty-feedback-models/TemplateRating";
+
 import FlagRatingsTable from "./components/FlagRatingsTable";
+import { useAppContext } from "../../shared/functions/Context";
+import { ITemplateRating } from "../../shared/models/three-sixty-feedback-models/TemplateRating";
+import { IValueRating } from "../../shared/models/three-sixty-feedback-models/ValueRating";
 // import FlagRatingsTable from "./componenst/FlagRatingsTable";
 
 

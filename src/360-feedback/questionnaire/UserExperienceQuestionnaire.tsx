@@ -2,13 +2,14 @@ import { observer } from "mobx-react-lite";
 import { Tab } from "../tabs/Tabs";
 import { useState } from "react";
 import { QuestionnaireTab } from "./components/QuestionnaireTabs";
-import ErrorBoundary from "../../../shared/components/error-boundary/ErrorBoundary";
+
 import UserLeadershipView from "./views/UserLeadershipView";
 import UserValuesView from "./views/UserValueView";
 // import UserTemplatesView from "./views/UserTemplatesView";
 import UserRequests from "../requests/UserRequests";
 import { useLocation, useNavigate } from "react-router-dom";
 import Resubmissions from "../requests/Resubmissions";
+import ErrorBoundary from "../../shared/components/error-boundary/ErrorBoundary";
 
 const UserExpQuestionnaire = observer(() => {
   const location = useLocation();

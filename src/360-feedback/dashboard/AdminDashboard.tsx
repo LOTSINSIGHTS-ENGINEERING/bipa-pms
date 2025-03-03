@@ -7,10 +7,10 @@ import { DialogActions, IconButton } from "@mui/material";
 import RequestsCount from "../requests/RequestsCount";
 import Home from "../home/Home";
 import "./AdminDashboard.scss";
-import { useAppContext } from "../../../shared/functions/Context";
 import { observer } from "mobx-react-lite";
 import AverageScoresByDepartment from "./Charts/DepartmentChart";
 import ReviewStatusDistribution from "./Charts/ReviewStatus";
+import { useAppContext } from "../../shared/functions/Context";
 
 interface RaterData {
   ratings: {

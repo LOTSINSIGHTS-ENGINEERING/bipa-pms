@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import User from '../../../../shared/models/User';
+
 import './UserDisplay.scss';
-import { IPrivateMessage } from '../../../../shared/models/three-sixty-feedback-models/messages/MessagesModel';
+
 import LastMessage from '../LastMessage/LastMessage';
+
+import { IPrivateMessage } from '../../../shared/models/three-sixty-feedback-models/messages/MessagesModel';
+import User from '../../../shared/models/User';
 
 interface UserDisplayProps {
   users: { value: string; label: string }[];

@@ -9,9 +9,10 @@ import {
   Unsubscribe,
 } from "@firebase/firestore";
 import { db } from "../config/firebase-config";
-import { IProject } from "../models/Project";
+
 import AppStore from "../stores/AppStore";
 import AppApi, { apiPathCompanyLevel } from "./AppApi";
+import { IProject } from "../models/three-sixty-feedback-models/Projects";
 
 export default class ProjectApi {
   constructor(private api: AppApi, private store: AppStore) {}

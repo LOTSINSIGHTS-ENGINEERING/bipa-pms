@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { observer } from "mobx-react-lite";
-import { useAppContext } from "../../../shared/functions/Context";
-import SingleSelect, {
-  IOption,
-} from "../../../shared/components/single-select/SingleSelect";
-import {
-  IRatingSession,
-  defaultRatingSession,
-} from "../../../shared/models/three-sixty-feedback-models/RatingSession";
-import { ITemplateRating, defaultTemplateRating } from "../../../shared/models/three-sixty-feedback-models/TemplateRating";
+import { useAppContext } from "../../shared/functions/Context";
+import { ITemplateRating, defaultTemplateRating } from "../../shared/models/three-sixty-feedback-models/TemplateRating";
+import SingleSelect, { IOption } from "../communication/single-select/SlingleSelect";
+
 
 const RequestRating: React.FC = observer(() => {
   const { api, store } = useAppContext();

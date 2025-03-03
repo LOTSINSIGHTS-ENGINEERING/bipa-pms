@@ -59,6 +59,12 @@ import CreatedJoCardMain from "./logged-in/job-cards/create-jobcard/CreateJobCar
 import AllocateJobCardMain from "./logged-in/job-cards/allocate-jobcard/AllocateJobCardMain";
 import NewLoggedOut from "./logged-out/NewLoggedOut";
 import IndividualScorecardHistory from "./logged-in/Individual-scorecard-reviews/IndividualScorecardHistory";
+import MainAdmin from "./360-feedback/MainAdmin";
+import Main360 from "./360-feedback/Main360";
+import FeedbackReviewHome from "./360-feedback/feed-back-review/FeedBackReviewHome";
+import FeedbackReview360 from "./360-feedback/feed-back-review/FeedbackReview360";
+import Questionnaire from "./360-feedback/questionnaire/questionnaire";
+import PrivateMessage from "./360-feedback/communication/messages";
 
 // Lazy load components
 const LoggedIn = lazy(() => import("./logged-in/LoggedIn"));
@@ -96,8 +102,26 @@ const DEV_MODE_ROUTES = () => {
             path="strategy/company-review/:fyid"
             element={<CompanyScorecardReviewView />}
           />
-          {/*JOBCARD*/}
-          {/*JOBCARD*/}
+        
+          {/* feedback routes */}
+       
+         
+          <Route path="threesixty/home/admin" element={<MainAdmin />} />
+          <Route path="threesixty/home/overview" element={<Main360 />} />
+          <Route
+            path="threesixty/home/feedback/reviews"
+            element={<FeedbackReviewHome />}
+          />
+          <Route
+            path="threesixty/home/feedback/reviews/:termId"
+            element={<FeedbackReview360 />}
+          />
+          <Route
+            path="threesixty/home/dashboard/set-questionnaire"
+            element={<Questionnaire />}
+          />
+          {/* <Route path="threesixty/home/PrivateMessage"  element={<PrivateMessage />} */}
+      
           <Route path="job-cards/dashboard" element={<JobDashboard />} />
           <Route path="job-cards/create" element={<CreatedJoCardMain />} />
           <Route path="job-cards/allocate" element={<AllocateJobCardMain />} />

@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { useAppContext } from "../../../../shared/functions/Context";
-import { LoadingEllipsis } from "../../../../shared/components/loading/Loading";
-import { ITemplateRating } from "../../../../shared/models/three-sixty-feedback-models/TemplateRating";
+import { LoadingEllipsis } from "../../../shared/components/loading/Loading";
+import { useAppContext } from "../../../shared/functions/Context";
+
 
 export const TemplatesDoughnut = () => {
   const { api, store } = useAppContext();

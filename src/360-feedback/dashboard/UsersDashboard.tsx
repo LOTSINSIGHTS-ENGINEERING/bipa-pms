@@ -47,8 +47,8 @@ export const UserDashboard = () => {
 
   const measures = store.measure.allMe;
   const $measures = measures.map((measure) => measure.asJson);
-  const rating = totalQ2MeasureRating($measures);
-  const rating2 = totalQ2MeasureRating($measures);
+  // const rating = totalQ2MeasureRating($measures);
+  // const rating2 = totalQ2MeasureRating($measures);
 
   const midtermPeriod = store.ratingAssignments.all.filter(
     (session) => session.asJson.midtermReview?.status === "In Progress"
@@ -479,7 +479,7 @@ export const UserDashboard = () => {
           </div>
         )}
 
-        {rating !== null && rating2 !== null && (
+        {/* {rating !== null && rating2 !== null && (
           <div className="info-card card-score" onClick={onViewMyScoreCard}>
             <div className="card-content">
               <div className="icon-container">
@@ -501,7 +501,7 @@ export const UserDashboard = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
 
       <section className="flex-container">
@@ -534,7 +534,5 @@ export const UserDashboard = () => {
     </div>
   );
 };
-function totalQ2MeasureRating($measures: import("../../shared/models/Measure").IMeasure[]) {
-  throw new Error("Function not implemented.");
-}
+
 

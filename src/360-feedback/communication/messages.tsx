@@ -2,18 +2,20 @@ import React, { useEffect, useRef, useState } from "react";
 import "./PrivateMessage.scss";
 import { observer } from "mobx-react-lite";
 import { collection, CollectionReference, onSnapshot, orderBy, query } from "firebase/firestore";
-import { useAppContext } from "../../../shared/functions/Context";
-import { IPrivateMessage } from "../../../shared/models/three-sixty-feedback-models/messages/MessagesModel";
-import { IChatModel, defaultChatModel } from "../../../shared/models/three-sixty-feedback-models/messages/ChatModel";
+
 import { MessageLoader } from "./messageLoader/MessageLoader";
-import { db } from "../../../shared/config/firebase-config";
+
 import AttachClip from "./assets/attach-clip.png";
 import sendIcon from "./assets/send.png";
 import UserDisplay from "./UserDisplay/UserDisplay";
 import UserDetails from "./UserDetails/user-details";
 import UnreadMessagesEmailSender from "./UnreadMessagesEmailSender/UnreadMessagesEmailSender";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../../../shared/config/firebase-config";
+import { db, storage } from "../../shared/config/firebase-config";
+import { useAppContext } from "../../shared/functions/Context";
+import { IChatModel, defaultChatModel } from "../../shared/models/three-sixty-feedback-models/messages/ChatModel";
+import { IPrivateMessage } from "../../shared/models/three-sixty-feedback-models/messages/MessagesModel";
+
 
 export const PrivateMessage = observer(() => {
   const { api, store } = useAppContext();

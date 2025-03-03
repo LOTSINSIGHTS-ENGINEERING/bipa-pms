@@ -1,22 +1,21 @@
-import { useState, useEffect, useTransition } from "react";
+import { useState, useEffect} from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import "../components/Templates.scss";
-import { useAppContext } from "../../../../shared/functions/Context";
+
 import { useParams, useNavigate } from "react-router-dom";
-import { IUser, defaultUser } from "../../../../shared/models/User";
-import {
-  IRatingSession,
-  defaultRatingSession,
-} from "../../../../shared/models/three-sixty-feedback-models/RatingSession";
-import { ITemplates } from "../../../../shared/models/three-sixty-feedback-models/Templates";
+
+
 import TemplateQuestionnaireBox from "../components/TemplateQuestionnaireBox";
+import { useAppContext } from "../../../shared/functions/Context";
+import { ITemplates } from "../../../shared/models/three-sixty-feedback-models/Templates";
+import { IUser } from "../../../shared/models/User";
 
 export default function UserRequestsRating() {
   const navigate = useNavigate();
   const { api, store } = useAppContext();
   const { rateeId, sessionId } = useParams();
   const me = store.auth.meJson;
-  const [isPending, startTransition] = useTransition();
+ 
   const [initials, setInitials] = useState<string>("");
   const [userData, setUserData] = useState<IUser | null>(null);
   const [template, setTemplate] = useState<ITemplates[]>([]);

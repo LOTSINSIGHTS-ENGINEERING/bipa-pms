@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { useAppContext } from "../../../../shared/functions/Context";
+
 import {
   Box,
   Typography,
@@ -20,6 +20,7 @@ import { Close } from "@mui/icons-material";
 import './UserRatingReport.scss';
 import GenerateAllPDFReports from "./components/GenerateAllPDFReports";
 import {GenerateUserPDFReport} from "./components/GenerateUserPDFReport";
+import { useAppContext } from "../../../shared/functions/Context";
 
 
 // Define AveragedRating type if not already defined

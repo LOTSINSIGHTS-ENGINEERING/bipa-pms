@@ -1,10 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { useAppContext } from "../../../../shared/functions/Context";
-import {
-  IValueRatingScores,
-  defaultValueRatingScores,
-} from "../../../../shared/models/three-sixty-feedback-models/ValueRatingScores";
-import { LoadingEllipsis } from "../../../../shared/components/loading/Loading";
+import { useAppContext } from "../../../shared/functions/Context";
+
+
 
 interface EntryScores {
   [valueName: string]: {

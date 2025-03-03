@@ -5,14 +5,15 @@ import { useAppContext } from "../../../shared/functions/Context";
 import { ILeadershipRating } from "../../../shared/models/three-sixty-feedback-models/LeadershipRating";
 import { IValueRating } from "../../../shared/models/three-sixty-feedback-models/ValueRating";
 
-
 const BarChart = () => {
   const { api, store } = useAppContext();
   const me = store.auth.meJson;
   const chartRef = useRef<HTMLCanvasElement>(null);
   const [loading, setLoading] = useState(true);
   const [valueRatings, setValueRatings] = useState<IValueRating[]>([]);
-  const [leadershipRatings, setLeadershipRatings] = useState<ILeadershipRating[]>([]);
+  const [leadershipRatings, setLeadershipRatings] = useState<
+    ILeadershipRating[]
+  >([]);
   const [description, setDescription] = useState("");
   const [chartSeries, setChartSeries] = useState<number[]>([]);
 
@@ -26,11 +27,21 @@ const BarChart = () => {
         )?.asJson.description;
         setDescription(descriptions ?? "");
 
-        const valueRatingsData = await api.valueRating.getAll(me?.uid ?? "", descriptions ?? "");
-        const leadershipRatingsData = await api.leadershipRating.getAll(me?.uid ?? "", descriptions ?? "");
+        const valueRatingsData = await api.valueRating.getAll(
+          me?.uid ?? "",
+          descriptions ?? ""
+        );
+        const leadershipRatingsData = await api.leadershipRating.getAll(
+          me?.uid ?? "",
+          descriptions ?? ""
+        );
 
-        setValueRatings(Array.isArray(valueRatingsData) ? valueRatingsData : []);
-        setLeadershipRatings(Array.isArray(leadershipRatingsData) ? leadershipRatingsData : []);
+        setValueRatings(
+          Array.isArray(valueRatingsData) ? valueRatingsData : []
+        );
+        setLeadershipRatings(
+          Array.isArray(leadershipRatingsData) ? leadershipRatingsData : []
+        );
         setChartSeries([valueRatingsData.length, leadershipRatingsData.length]);
         setLoading(false);
       } catch (error) {
@@ -81,7 +92,13 @@ const BarChart = () => {
         <p>Loading...</p>
       ) : (
         <>
-  <ReactApexChart options={chartOptions} series={[{ data: chartSeries }]} type="bar" height={350} />        </>
+          <ReactApexChart
+            options={chartOptions}
+            series={[{ data: chartSeries }]}
+            type="bar"
+            height={350}
+          />{" "}
+        </>
       )}
     </div>
   );

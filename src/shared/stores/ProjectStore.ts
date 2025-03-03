@@ -1,7 +1,8 @@
 import Store from "./Store";
 import AppStore from "./AppStore";
 import { runInAction } from "mobx";
-import Project, { IProject } from "../models/Project";
+import Project, { IProject } from "../models/three-sixty-feedback-models/Projects";
+
 
 export default class ProjectStore extends Store<IProject, Project> {
   items = new Map<string, Project>();

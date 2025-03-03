@@ -1,11 +1,26 @@
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { observer } from "mobx-react-lite";
 import { NavLink } from "react-router-dom";
 import ErrorBoundary from "../../shared/components/error-boundary/ErrorBoundary";
 import { USER_ROLES } from "../../shared/functions/CONSTANTS";
 import { useAppContext } from "../../shared/functions/Context";
-import { faAngleRight, faAnglesRight, faBriefcase, faBullseye, faCaretDown, faChartColumn, faChartPie, faChartSimple, faChessBoard, faCircleDot, faDatabase, faGears, faHomeAlt, faShield } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleRight,
+  faAnglesRight,
+  faBriefcase,
+  faBullseye,
+  faCaretDown,
+  faChartColumn,
+  faChartPie,
+  faChartSimple,
+  faChessBoard,
+  faCircleDot,
+  faComments,
+  faDatabase,
+  faGears,
+  faHomeAlt,
+  faShield,
+} from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const Account = () => {
@@ -166,6 +181,8 @@ const DEV_MODE_DRAWER = () => {
             </li>
           </ul>
         </li>
+
+
         <li className="list-item uk-parent">
           <NavLink to={"execution"} className="navlink">
             <FontAwesomeIcon
@@ -231,6 +248,37 @@ const DEV_MODE_DRAWER = () => {
             />
             Portfolio of evidence
           </NavLink>
+        </li>
+        <li className="list-item uk-parent">
+          <NavLink to={"feedback_360"} className="navlink">
+            <FontAwesomeIcon
+              icon={faComments}
+              className="icon uk-margin-small-right"
+            />
+            Feedback
+            <FontAwesomeIcon icon={faCaretDown} className="down-arrow" />
+          </NavLink>
+
+          <ul className="uk-nav-sub">
+            <li>
+              <NavLink to={"threesixty/home/overview"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                360 Feedback
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"personal/dashboard"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                Personal Development
+              </NavLink>
+            </li>
+          </ul>
         </li>
 
         <li className="list-item uk-parent">
@@ -363,7 +411,7 @@ const DIRECTOR_USER_DRAWER = () => {
             </li>
           </ul>
         </li>
-      
+
         <li className="list-item uk-parent">
           <NavLink to={"strategy"} className="navlink">
             <FontAwesomeIcon
@@ -391,6 +439,37 @@ const DIRECTOR_USER_DRAWER = () => {
                   className="icon uk-margin-small-right"
                 />
                 Company Reviews
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+        <li className="list-item uk-parent">
+          <NavLink to={"feedback_360"} className="navlink">
+            <FontAwesomeIcon
+              icon={faComments}
+              className="icon uk-margin-small-right"
+            />
+            Feedback
+            <FontAwesomeIcon icon={faCaretDown} className="down-arrow" />
+          </NavLink>
+
+          <ul className="uk-nav-sub">
+            <li>
+              <NavLink to={"threesixty/home/overview"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                360 Feedback
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"personal/dashboard"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                Personal Development
               </NavLink>
             </li>
           </ul>
@@ -433,6 +512,39 @@ const MD_USER_DRAWER = () => {
             </li>
           </ul>
         </li>
+
+        <li className="list-item uk-parent">
+          <NavLink to={"feedback_360"} className="navlink">
+            <FontAwesomeIcon
+              icon={faComments}
+              className="icon uk-margin-small-right"
+            />
+            Feedback
+            <FontAwesomeIcon icon={faCaretDown} className="down-arrow" />
+          </NavLink>
+
+          <ul className="uk-nav-sub">
+            <li>
+              <NavLink to={"threesixty/home/overview"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                360 Feedback
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"personal/dashboard"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                Personal Development
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+
         <li className="list-item uk-parent">
           <NavLink to="job-cards" className="navlink">
             <FontAwesomeIcon
@@ -623,7 +735,7 @@ const SUPER_USER_DRAWER = () => {
             </li>
           </ul>
         </li>
-       
+
         <li className="list-item uk-parent">
           <NavLink to={"strategy"} className="navlink">
             <FontAwesomeIcon
@@ -781,6 +893,38 @@ const SUPER_USER_DRAWER = () => {
           </ul>
         </li>
 
+        <li className="list-item uk-parent">
+          <NavLink to={"feedback_360"} className="navlink">
+            <FontAwesomeIcon
+              icon={faComments}
+              className="icon uk-margin-small-right"
+            />
+            Feedback
+            <FontAwesomeIcon icon={faCaretDown} className="down-arrow" />
+          </NavLink>
+
+          <ul className="uk-nav-sub">
+            <li>
+              <NavLink to={"threesixty/home/overview"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                360 Feedback
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"personal/dashboard"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                Personal Development
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+
         {/* execution */}
 
         {/* <li className="list-item uk-parent">
@@ -899,7 +1043,6 @@ const SUPER_USER_DRAWER = () => {
   );
 };
 
-
 const EXECUTIVE_USER_DRAWER = () => {
   return (
     <div className="drawer-list">
@@ -934,6 +1077,38 @@ const EXECUTIVE_USER_DRAWER = () => {
             </li>
           </ul>
         </li>
+        <li className="list-item uk-parent">
+          <NavLink to={"feedback_360"} className="navlink">
+            <FontAwesomeIcon
+              icon={faComments}
+              className="icon uk-margin-small-right"
+            />
+            Feedback
+            <FontAwesomeIcon icon={faCaretDown} className="down-arrow" />
+          </NavLink>
+
+          <ul className="uk-nav-sub">
+            <li>
+              <NavLink to={"threesixty/home/overview"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                360 Feedback
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"personal/dashboard"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                Personal Development
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+
         <li className="list-item uk-parent">
           <NavLink to="job-cards" className="navlink">
             <FontAwesomeIcon
@@ -1228,6 +1403,37 @@ const ADMIN_USER_DRAWER = () => {
                   className="icon uk-margin-small-right"
                 />
                 Departments
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+        <li className="list-item uk-parent">
+          <NavLink to={"feedback_360"} className="navlink">
+            <FontAwesomeIcon
+              icon={faComments}
+              className="icon uk-margin-small-right"
+            />
+            Feedback
+            <FontAwesomeIcon icon={faCaretDown} className="down-arrow" />
+          </NavLink>
+
+          <ul className="uk-nav-sub">
+            <li>
+              <NavLink to={"threesixty/home/overview"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                360 Feedback
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"personal/dashboard"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                Personal Development
               </NavLink>
             </li>
           </ul>
@@ -1575,6 +1781,37 @@ const MANAGER_USER_DRAWER = () => {
             </li>
           </ul>
         </li>
+        <li className="list-item uk-parent">
+          <NavLink to={"feedback_360"} className="navlink">
+            <FontAwesomeIcon
+              icon={faComments}
+              className="icon uk-margin-small-right"
+            />
+            Feedback
+            <FontAwesomeIcon icon={faCaretDown} className="down-arrow" />
+          </NavLink>
+
+          <ul className="uk-nav-sub">
+            <li>
+              <NavLink to={"threesixty/home/overview"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                360 Feedback
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"personal/dashboard"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                Personal Development
+              </NavLink>
+            </li>
+          </ul>
+        </li>
 
         <li className="list-item">
           <NavLink to={"drive"} className="navlink">
@@ -1747,6 +1984,38 @@ const SUPERVISOR_USER_DRAWER = () => {
                   className="icon uk-margin-small-right"
                 />
                 Performance Reviews
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+
+        <li className="list-item uk-parent">
+          <NavLink to={"feedback_360"} className="navlink">
+            <FontAwesomeIcon
+              icon={faComments}
+              className="icon uk-margin-small-right"
+            />
+            Feedback
+            <FontAwesomeIcon icon={faCaretDown} className="down-arrow" />
+          </NavLink>
+
+          <ul className="uk-nav-sub">
+            <li>
+              <NavLink to={"threesixty/home/overview"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                360 Feedback
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"personal/dashboard"} className="navlink">
+                <FontAwesomeIcon
+                  icon={faAnglesRight}
+                  className="icon uk-margin-small-right"
+                />
+                Personal Development
               </NavLink>
             </li>
           </ul>
@@ -2079,7 +2348,6 @@ const SUPERVISOR_USER_DRAWER = () => {
 //   );
 // };
 
-
 const EMPLOYEE_USER_DRAWER = () => {
   return (
     <div className="drawer-list">
@@ -2168,7 +2436,7 @@ const EMPLOYEE_USER_DRAWER = () => {
             </li>
           </ul>
         </li>
-         <li className="list-item uk-parent">
+        <li className="list-item uk-parent">
           <NavLink to="job-cards" className="navlink">
             <FontAwesomeIcon
               icon={faBriefcase}
@@ -2324,7 +2592,8 @@ const OverlayDrawer = () => {
         <button
           className="uk-offcanvas-close"
           type="button"
-          data-uk-close></button>
+          data-uk-close
+        ></button>
         <DrawerContent />
       </div>
     </div>

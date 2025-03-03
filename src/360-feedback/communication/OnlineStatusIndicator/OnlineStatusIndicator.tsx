@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { doc, setDoc, onSnapshot, deleteDoc } from 'firebase/firestore';
-import { firestore } from '../../../../shared/config/firebase-config';
+
 import './OnlineStatusIndicator.scss';
+import { firestore } from '../../../shared/config/firebase-config';
 
 interface OnlineStatusIndicatorProps {
   userId: string;

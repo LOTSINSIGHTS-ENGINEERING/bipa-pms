@@ -26,7 +26,7 @@ body {
 
 /* Updated Table Header Styling */
 .custom-table th.header-cell {
-  background-color: #000 !important; /* Black background for table header */
+  background-color: #9e0a2f !important; /* Maroon background for table header *//* Black background for table header */
   color: #fff; /* White text color */
   height: 50px !important;
   font-weight: bold;
@@ -85,26 +85,27 @@ body {
 }
 
 .pagination-button {
-  background-color: #333 !important; /* Dark grey background for pagination button */
+  background-color: #9e0a2f !important; /* Maroon background for pagination button */
   color: white;
   border: none;
-  padding: 2px 4px;
+  padding: 5px 10px;
   margin: 0 5px;
   cursor: pointer;
   border-radius: 17px;
   font-size: 14px;
   width: 80px;
-  height: 30px;
+  height: 35px;
 }
 
 .pagination-button:hover {
-  background-color: #555; /* Lighter grey on hover */
+  background-color: #ec2027 !important; /* Brighter maroon on hover */
 }
 
 .pagination-button:disabled {
-  background-color: #888; /* Disabled state with lighter grey */
+  background-color: #555; /* Disabled state with dark grey */
   cursor: not-allowed;
 }
+
 
 /* Search Input Styles */
 .search-container {

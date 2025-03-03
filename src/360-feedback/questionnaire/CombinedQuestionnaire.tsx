@@ -1,9 +1,10 @@
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
 import { QuestionnaireTab } from "./components/QuestionnaireTabs";
-import ErrorBoundary from "../../../shared/components/error-boundary/ErrorBoundary";
+
 import ValueQuestionnaireView from "./ValueQuestionnaire";
 import LeadershipQuestionnaireView from "./LeadershipQuestionnaire";
+import ErrorBoundary from "../../shared/components/error-boundary/ErrorBoundary";
 const CombinedQuestionnaire = observer(() => {
   const [activeTab, setActiveTab] = useState("values");
   const handleTab = (label: string) => {

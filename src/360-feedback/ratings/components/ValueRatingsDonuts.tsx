@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { useAppContext } from "../../../../shared/functions/Context";
-import {
-  IValueRatingScores,
-  defaultValueRatingScores,
-} from "../../../../shared/models/three-sixty-feedback-models/ValueRatingScores";
-import { LoadingEllipsis } from "../../../../shared/components/loading/Loading";
+import { LoadingEllipsis } from "../../../shared/components/loading/Loading";
+import { useAppContext } from "../../../shared/functions/Context";
+import { defaultValueRatingScores } from "../../../shared/models/three-sixty-feedback-models/LeadershipRatingScores";
+import { IValueRatingScores } from "../../../shared/models/three-sixty-feedback-models/ValueRatingScores";
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.defaults.font.family = "'Lexend', sans-serif";

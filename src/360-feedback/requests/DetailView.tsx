@@ -1,31 +1,52 @@
-import React from 'react';
-import { Box, Typography, IconButton, Dialog, DialogContent } from '@mui/material';
-import { ITemplateRating } from '../../../shared/models/three-sixty-feedback-models/TemplateRating';
-import './DetailView.scss';
-import { format } from 'date-fns';
+import React from "react";
+import {
+  Box,
+  Typography,
+  IconButton,
+  Dialog,
+  DialogContent,
+} from "@mui/material";
 
+import "./DetailView.scss";
+import { format } from "date-fns";
+import { ITemplateRating } from "../../shared/models/three-sixty-feedback-models/TemplateRating";
 
 interface DetailViewProps {
   open: boolean;
   onClose: () => void;
   data: ITemplateRating | null;
   getUserName: (userId: string) => string;
-  getTemplateName: (templateId: string) => string;  
+  getTemplateName: (templateId: string) => string;
 }
 
-const DetailView: React.FC<DetailViewProps> = ({ open, onClose, data, getUserName, getTemplateName }) => {
+const DetailView: React.FC<DetailViewProps> = ({
+  open,
+  onClose,
+  data,
+  getUserName,
+  getTemplateName,
+}) => {
   if (!data) return null;
 
-  const formattedDate = format(new Date(data.dueDate), 'MM/dd/yyyy'); // Format date
+  const formattedDate = format(new Date(data.dueDate), "MM/dd/yyyy"); // Format date
 
   return (
-    <Dialog open={open} onClose={onClose} className="detail-view-dialog" fullWidth maxWidth="md">
+    <Dialog
+      open={open}
+      onClose={onClose}
+      className="detail-view-dialog"
+      fullWidth
+      maxWidth="md"
+    >
       <Box className="dialog-header">
-        <Typography variant="h6" style={{ color: '#fff' }}>Detail View</Typography>
+        <Typography variant="h6" style={{ color: "#fff" }}>
+          Detail View
+        </Typography>
         <IconButton onClick={onClose}>
-          <svg xmlns="http://www.w3.org/2000/svg" 
-            width="24" 
-            height="24" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="currentColor"
           >
@@ -38,11 +59,15 @@ const DetailView: React.FC<DetailViewProps> = ({ open, onClose, data, getUserNam
         <Box className="detail-content">
           <Box className="detail-item">
             <Typography className="label">Ratee:</Typography>
-            <Typography className="value">{getUserName(data.rateeId)}</Typography>
+            <Typography className="value">
+              {getUserName(data.rateeId)}
+            </Typography>
           </Box>
           <Box className="detail-item">
             <Typography className="label">Rater:</Typography>
-            <Typography className="value">{getUserName(data.raterId)}</Typography>
+            <Typography className="value">
+              {getUserName(data.raterId)}
+            </Typography>
           </Box>
           <Box className="detail-item">
             <Typography className="label">Due Date:</Typography>
@@ -58,7 +83,9 @@ const DetailView: React.FC<DetailViewProps> = ({ open, onClose, data, getUserNam
           </Box>
           <Box className="detail-item">
             <Typography className="label">Questionnaire:</Typography>
-            <Typography className="value">{getTemplateName(data.templateId)}</Typography>
+            <Typography className="value">
+              {getTemplateName(data.templateId)}
+            </Typography>
           </Box>
         </Box>
       </DialogContent>

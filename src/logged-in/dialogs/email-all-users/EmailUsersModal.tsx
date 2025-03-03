@@ -44,7 +44,7 @@ const EmailUsersModal = observer(() => {
     e.preventDefault();
     setLoading(true);
     try {
-      await api.mail.sendMail(getEmail(), MAIL_EMAIL, subject, $MESSAGE);
+      await api.mail.sendMail1(getEmail(), MAIL_EMAIL, subject, $MESSAGE);
       ui.snackbar.load({
         id: Date.now(),
         type: "success",

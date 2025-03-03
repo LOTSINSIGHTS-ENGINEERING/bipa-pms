@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { useAppContext } from "../../../shared/functions/Context";
-import { IUser } from "../../../shared/models/User";
+
 import "./LowRated.scss"; 
 import { Tooltip } from "@mui/material";
+import { useAppContext } from "../../shared/functions/Context";
+import { IUser } from "../../shared/models/User";
 
 interface RaterData {
   ratings: {

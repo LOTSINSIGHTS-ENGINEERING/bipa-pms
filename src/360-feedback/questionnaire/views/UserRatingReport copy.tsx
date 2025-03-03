@@ -16,11 +16,12 @@ import {
   LinearProgress,
   Box,
 } from "@mui/material";
-import ValueRatingApi from "../../../../shared/apis/three-sixty-apis/ValueRatingApi";
-import LeadershipRatingApi from "../../../../shared/apis/three-sixty-apis/LeadershipRatingApi";
-import GenerateUserRatingPDF from "../../ratings/components/GenerateUserRatingPDF";
-import { useAppContext } from "../../../../shared/functions/Context";
+
 import './UserRatingReport.scss';
+import LeadershipRatingApi from "../../../shared/apis/three-sixty-apis/LeadershipRatingApi";
+import ValueRatingApi from "../../../shared/apis/three-sixty-apis/ValueRatingApi";
+import { useAppContext } from "../../../shared/functions/Context";
+import GenerateUserRatingPDF from "../../ratings/components/GenerateUserRatingPDF";
 
 interface IUser {
   uid: string;

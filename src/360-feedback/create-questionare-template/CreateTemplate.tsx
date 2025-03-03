@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { observer } from "mobx-react-lite";
-import { useAppContext } from "../../../shared/functions/Context";
-import {
-  ITemplates,
-  Statement,
-  defaultTemplate,
-} from "../../../shared/models/three-sixty-feedback-models/Templates";
+
+
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
@@ -15,6 +11,8 @@ import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import { useAppContext } from "../../shared/functions/Context";
+import { ITemplates, defaultTemplate, Statement } from "../../shared/models/three-sixty-feedback-models/Templates";
 
 const CreateTemplate: React.FC = observer(() => {
   const { api } = useAppContext();

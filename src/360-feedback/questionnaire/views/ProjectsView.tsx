@@ -8,6 +8,10 @@ import { useAppContext } from "../../../shared/functions/Context";
 import { ITemplate } from "../../../shared/models/three-sixty-feedback-models/Template";
 import { IUser, defaultUser } from "../../../shared/models/User";
 
+import { ICommittee } from "../../../shared/models/three-sixty-feedback-models/Committee";
+import { IService } from "../../../shared/models/three-sixty-feedback-models/Services";
+import { IProject } from "../../../shared/models/three-sixty-feedback-models/Projects";
+
 interface IProps {
   templateAssignments: ITemplate;
 }
@@ -18,6 +22,7 @@ const ProjectsView = observer(() => {
   const criteria = store.projects.all.map((value) => {
     return value.asJson;
   });
+
   const [ratees, setRatees] = useState<IUser>({ ...defaultUser });
   const users = store.user.all.map((user) => {
     return user.asJson;

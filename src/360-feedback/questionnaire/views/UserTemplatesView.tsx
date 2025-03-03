@@ -145,7 +145,7 @@ const UserTemplatesView = observer(() => {
         );
 
         if(rater.asJson.email!==null){  
-          await api.mail.sendMail(
+          await api.mail.sendMail1(
           [rater.asJson.email],
           MAIL_EMAIL,
           emailTemplate.MY_SUBJECT,
@@ -203,8 +203,9 @@ const UserTemplatesView = observer(() => {
    };
  
 
-  return (
+   return (
     <div className="user-templates-view">
+      {/* Button to toggle request form */}
       <div className="button-container">
         <Button
           onClick={() => setIsFormVisible((prev) => !prev)}
@@ -212,21 +213,11 @@ const UserTemplatesView = observer(() => {
           className="toggle-form-button"
           endIcon={
             isFormVisible ? (
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                height="1em"
-                width="1em"
-              >
+              <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
                 <path d="M13 15l2.5 2.5 1.42-1.42L12 11.16l-4.92 4.92L8.5 17.5 11 15v6h2v-6M3 3h18v2H3V3m0 4h10v2H3V7z" />
               </svg>
             ) : (
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                height="1em"
-                width="1em"
-              >
+              <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
                 <path d="M13 9l2.5-2.5 1.42 1.42L12 12.84 7.08 7.92 8.5 6.5 11 9V3h2v6M3 15h18v2H3v-2m0 4h10v2H3v-2z" />
               </svg>
             )
@@ -235,7 +226,8 @@ const UserTemplatesView = observer(() => {
           {isFormVisible ? "Hide Request" : "Send Request"}
         </Button>
       </div>
-
+  
+      {/* Request Form */}
       {isFormVisible && (
         <form onSubmit={handleRequestRating} className="request-form">
           <Grid container spacing={3}>
@@ -245,42 +237,20 @@ const UserTemplatesView = observer(() => {
                 id="templateName"
                 label="Heading"
                 value={session.heading}
-                onChange={(e) =>
-                  setSession({ ...session, heading: e.target.value })
-                }
+                onChange={(e) => setSession({ ...session, heading: e.target.value })}
                 required
               />
             </Grid>
             <Grid item xs={12} md={6}>
-              {/* <TextField
+              <TextField
                 fullWidth
                 id="dueDate"
                 label="Set Due Date"
                 type="date"
-                value={session.dueDate}
-                onChange={(value) =>
-                  // setSession({ ...session, dueDate: NumberInputValue(value?:0)|0 })
-                }
+                value={dueDateValue ? new Date(dueDateValue).toISOString().substring(0, 10) : ""}
+                onChange={handleDateChange}
                 InputLabelProps={{ shrink: true }}
-              /> */}
-
-              <Grid container spacing={3}>
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    id="dueDate"
-                    label="Set Due Date"
-                    type="date"
-                    value={
-                      dueDateValue
-                        ? new Date(dueDateValue).toISOString().substring(0, 10)
-                        : ""
-                    }
-                    onChange={handleDateChange}
-                    InputLabelProps={{ shrink: true }}
-                  />
-                </Grid>
-              </Grid>
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -289,9 +259,7 @@ const UserTemplatesView = observer(() => {
                 label="Description"
                 rows={5}
                 value={session.description}
-                onChange={(e) =>
-                  setSession({ ...session, description: e.target.value })
-                }
+                onChange={(e) => setSession({ ...session, description: e.target.value })}
                 required
               />
             </Grid>
@@ -302,17 +270,13 @@ const UserTemplatesView = observer(() => {
                 label="Reasons for Request"
                 rows={5}
                 value={session.reasonForRequest}
-                onChange={(e) =>
-                  setSession({ ...session, reasonForRequest: e.target.value })
-                }
+                onChange={(e) => setSession({ ...session, reasonForRequest: e.target.value })}
                 required
               />
             </Grid>
             <Grid item xs={12} md={6}>
               <FormControl fullWidth>
-                <InputLabel id="selectTemplateLabel">
-                  Select Template
-                </InputLabel>
+                <InputLabel id="selectTemplateLabel">Select Template</InputLabel>
                 <Select
                   labelId="selectTemplateLabel"
                   id="selectTemplate"
@@ -329,7 +293,6 @@ const UserTemplatesView = observer(() => {
                 </Select>
               </FormControl>
             </Grid>
-
             <Grid item xs={12} md={6}>
               <FormControl fullWidth>
                 <InputLabel id="selectUserLabel">Select User</InputLabel>
@@ -349,98 +312,52 @@ const UserTemplatesView = observer(() => {
                 </Select>
               </FormControl>
             </Grid>
-
-            {/* 
-            <Grid item xs={12} md={6}>
-              <SingleSelect
-                name="search-team"
-                options={usersOptions}
-                width="100%"
-                onChange={handleChangeRater}
-                placeholder="Select Rater"
-                value={selectedRaterId}
-                required
-              />
-            </Grid> */}
             {templateId !== "" && (
               <Grid item xs={12}>
                 <div className="watermark">
                   <h3>NOTE: This template is currently Read-Only</h3>
                   {allTemplates.map(
                     (template) =>
-                      templateId === template.id && (
-                        <AdminQuestionnaireBox
-                          key={template.id}
-                          template={template}
-                        />
-                      )
+                      templateId === template.id && <AdminQuestionnaireBox key={template.id} template={template} />
                   )}
                 </div>
               </Grid>
             )}
             <Grid item xs={12}>
-              <Button
-                type="submit"
-                variant="contained"
-                className="submit-button"
-                disabled={isSendingEmail}
-              >
-                {isSendingEmail ? (
-                  <CircularProgress size={24} color="inherit" />
-                ) : (
-                  "Send Request"
-                )}
+              <Button type="submit" variant="contained" className="submit-button" disabled={isSendingEmail}>
+                {isSendingEmail ? <CircularProgress size={24} color="inherit" /> : "Send Request"}
               </Button>
             </Grid>
           </Grid>
         </form>
       )}
-
-      <Modal
-        modalId={MODAL_NAMES.THREE_SIXTY_FEEDBACK.SUCCESSFULLY_REQUESTED_MODAL}
-      >
+  
+      {/* Table Section (Only Show When Form is Hidden) */}
+      {!isFormVisible && (
+        <div className="request-table">
+          <RequestTable data={data} onDataChange={fetchData} showArchivedButton={false} />
+        </div>
+      )}
+  
+      {/* Modals & Notifications */}
+      <Modal modalId={MODAL_NAMES.THREE_SIXTY_FEEDBACK.SUCCESSFULLY_REQUESTED_MODAL}>
         <RequestSubmittedAlertModal />
       </Modal>
-
-      <Snackbar
-        open={showSuccessSnackbar}
-        autoHideDuration={6000}
-        onClose={() => setShowSuccessSnackbar(false)}
-      >
-        <Alert
-          onClose={() => setShowSuccessSnackbar(false)}
-          severity="success"
-          sx={{ width: "100%" }}
-        >
+  
+      <Snackbar open={showSuccessSnackbar} autoHideDuration={6000} onClose={() => setShowSuccessSnackbar(false)}>
+        <Alert onClose={() => setShowSuccessSnackbar(false)} severity="success" sx={{ width: "100%" }}>
           Email successfully sent!
         </Alert>
       </Snackbar>
-
-      <Snackbar
-        open={showErrorSnackbar}
-        autoHideDuration={6000}
-        onClose={() => setShowErrorSnackbar(false)}
-      >
-        <Alert
-          onClose={() => setShowErrorSnackbar(false)}
-          severity="error"
-          sx={{ width: "100%" }}
-        >
+  
+      <Snackbar open={showErrorSnackbar} autoHideDuration={6000} onClose={() => setShowErrorSnackbar(false)}>
+        <Alert onClose={() => setShowErrorSnackbar(false)} severity="error" sx={{ width: "100%" }}>
           Error sending email. Please try again.
         </Alert>
       </Snackbar>
-
-      {!isFormVisible && (
-        <div className="request-table">
-          <RequestTable
-            data={data}
-            onDataChange={fetchData}
-            showArchivedButton={false}
-          />
-        </div>
-      )}
     </div>
   );
+  
 });
 
 export default UserTemplatesView;

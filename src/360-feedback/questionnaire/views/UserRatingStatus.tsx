@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Typography, Box, IconButton, Fade, Tooltip } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
-import { useAppContext } from "../../../../shared/functions/Context";
+
 import DoughnutChart from "../../dashboard/Charts/DoughnutChart";
+import { useAppContext } from "../../../shared/functions/Context";
 
 const UserRatingStatus = observer(() => {
   const { store } = useAppContext();

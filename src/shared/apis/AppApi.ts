@@ -34,7 +34,7 @@ import GeneralTaskApi from "./GeneralTaskApi";
 import SubordinateObjectiveApi from "./SubordinateObjectiveApi";
 
 import JobCardApi from "./JobCardApi";
-import ChatApi from "./three-sixty-apis/Chat/ChatApi";
+
 import CommitteeApi from "./three-sixty-apis/Committee";
 import CommitteeRatingApi from "./three-sixty-apis/CommitteeRatingApi";
 import LeadershipApi from "./three-sixty-apis/LeadershipApi";
@@ -49,6 +49,7 @@ import TemplateApi from "./three-sixty-apis/TemplateApi";
 import TemplateRatingApi from "./three-sixty-apis/TemplateRatingApi";
 import ValueApi from "./three-sixty-apis/ValueApi";
 import ValueRatingApi from "./three-sixty-apis/ValueRatingApi";
+import ChatApi from "./three-sixty-apis/messages/ChatApi";
 
 export const apiPathCompanyLevel = (
   category:
