@@ -184,7 +184,7 @@ const DEV_MODE_ROUTES = () => {
           <Route path="projects" element={<UserProjects />} />
           <Route path="projects/:id" element={<PortfolioProjects />} />
           <Route path="project/:projectId" element={<ProjectView />} />
-          <Route path="audit-trail/:projectId" element={<AuditTrailPage/>} />
+          {/* <Route path="audit-trail/:projectId" element={<AuditTrailPage/>} /> */}
           <Route path="portfolio" element={<PortfolioPage />} />
           <Route path="tasks" element={<Tasks />} />
           <Route path="checkin" element={<CheckIn />} />

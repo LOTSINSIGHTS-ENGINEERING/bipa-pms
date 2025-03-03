@@ -154,6 +154,7 @@ const MODAL_NAMES = {
     CREATE_PORTFOLIO: "newPortfolio-modal",
     VIEW_TASK: "view-Task-Modal",
     VIEW_RISK: "view-Risk-Modal",
+    VIEW_TRAIL: "view-audit-trail",
     ADD_USER: "add-user-modal",
     PROJECT_FILES: "project-files-modal",
     ATTACH_MILESTONE_BILL: "attach-bill-modal",

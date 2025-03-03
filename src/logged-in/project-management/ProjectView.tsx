@@ -34,6 +34,7 @@ import { ProjectGridRiskItem } from "./components/items/ProjectRiskGridItem";
 import { IProjectLogs } from "../../shared/models/ProjectLogs";
 import { MAIL_EMAIL, MAIL_PROJECT_TASK_REMOVED } from "../../shared/functions/mailMessages";
 import { generateProjectPDF } from "../../shared/functions/scorecard-pdf/GenerateProjectPDF";
+import AuditTrailModal from "./AuditTrailPage";
 
 const ProjectView = observer(() => {
     const { api, store } = useAppContext();
@@ -141,11 +142,8 @@ const ProjectView = observer(() => {
             setVisible(true);
         }
     };
-    
     const handleViewAuditTrail = () => {
-        loadProjectLog();  // Fetch logs before navigation
-        // Using navigate for navigation and passing logs as state
-        navigate(`/c/audit-trail/${project.id}`, { state: { logs: logs } });
+        showModalFromId(MODAL_NAMES.PROJECTS.VIEW_TRAIL);
     };
 
     useEffect(() => {
@@ -929,6 +927,9 @@ const ProjectView = observer(() => {
                 </Modal>
                 <Modal modalId={MODAL_NAMES.PROJECTS.VIEW_RISK}>
                     <ViewRiskModal projectId={project.id} riskId={selectedRisk.id} />
+                </Modal>
+                <Modal modalId={MODAL_NAMES.PROJECTS.VIEW_TRAIL}>
+                    <AuditTrailModal projectId={project.id} />
                 </Modal>
                 <Modal modalId={MODAL_NAMES.PROJECTS.PROJECT_FILES}>
                     <FilesModal tasks={tasks} />
