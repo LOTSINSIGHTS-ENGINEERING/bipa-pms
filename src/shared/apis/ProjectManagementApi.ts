@@ -672,24 +672,26 @@ export default class ProjectManagementApi {
 
 
     async getProjectLogs(projectId: string) {
-
-        this.store.projectLogs.removeAll()
-
+        this.store.projectLogs.removeAll();  // Clear any existing logs
+    
         const path = this.logsPath(projectId);
-        if (!path) return;
-
-        const unsubscribe = onSnapshot(
-            query(collection(db, path)),
-            (querySnapshot) => {
-                const projectLogs: IProjectLogs[] = [];
-                querySnapshot.forEach((doc) => {
-                    projectLogs.push({ id: doc.id, ...doc.data() } as IProjectLogs);
-                });
-                this.store.projectLogs.load(projectLogs);
-            }
-        );
-        return unsubscribe;
+        console.log("Fetching logs from path:", path);  // Log the path
+        if (!path) {
+            console.error("Invalid path for project logs");
+            return [];
+        }
+    
+        const querySnapshot = await getDocs(query(collection(db, path)));  // Using getDocs for a one-time fetch
+        const projectLogs: IProjectLogs[] = [];
+        querySnapshot.forEach((doc) => {
+            projectLogs.push({ id: doc.id, ...doc.data() } as IProjectLogs);
+        });
+        console.log("Fetched logs:", projectLogs);  // Log all fetched logs
+        this.store.projectLogs.load(projectLogs);  // Update store with logs
+    
+        return projectLogs;  // Return the fetched logs directly
     }
+    
 
     async deleteProjectLogs(projectId: string, logs: IProjectLogs[]) {
 

@@ -22,6 +22,8 @@ const PortfolioSetting: FC<IProps> = observer(({ colors, portfolioName, handleDe
             }
         })
     }, [colors]);
+    console.log(portfolioName);
+    
 
     return (
         <div className="" style={{ backgroundColor: "white", width: "18rem", zIndex: "1000", borderRadius: "6px" }} uk-dropdown="mode: click">
@@ -30,7 +32,7 @@ const PortfolioSetting: FC<IProps> = observer(({ colors, portfolioName, handleDe
                     <input type="text" name="name" id="name" placeholder="Portfolio Name"
                         defaultValue={portfolioName}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPortfolioName(e.target.value)} />
-                    <button className="update-name" onClick={() => { handleUpdatePortfolio({ name: _portfolioName }) }}>
+                    <button className="update-name" onClick={() => { handleUpdatePortfolio( portfolioName) }}>
                         <span data-uk-icon="icon:check; ratio: .7"></span>
                     </button>
                 </div>
@@ -40,7 +42,7 @@ const PortfolioSetting: FC<IProps> = observer(({ colors, portfolioName, handleDe
                     {
                         colours.map((color: any, key) => (
                             <div className="color-palette ripple-surface" key={`${key}imwyyef7kw9875${color}`} onClick={(e) => { setColorChoice(color.name); handleUpdatePortfolio({ colors: color.colors, textColor: color.textColor }); }}>
-                                {colorChoice === color.name ? (<div className="check"><span uk-icon="icon:check; ratio: .7"></span></div>) : null}
+                                {colorChoice === color.name? (<div className="check"><span uk-icon="icon:check; ratio: .7"></span></div>) : null}
                                 <div className="palette-1" style={{ backgroundColor: color.colors[0] }}></div>
                                 <div className="palette-2" style={{ backgroundColor: color.colors[1] }}></div>
                                 <div className="palette-3" style={{ backgroundColor: color.colors[2] }}></div>

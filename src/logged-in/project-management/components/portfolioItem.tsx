@@ -36,10 +36,18 @@ const PortfolioItem: FC<IPortfolio> = observer((portfolio) => {
         }
     }
 
-    const handleUpdatePortfolio = async (value: ChangeEvent<HTMLInputElement>) => {
-        if (value.target.name !== portfolio.portfolioName && !!value)
-            await api.projectManagement.updatePortfolio(portfolio);
-    }
+    const handleUpdatePortfolio = async (updatedPortfolio: Partial<IPortfolio>) => {
+        if (!updatedPortfolio) {
+            console.error("Error: Portfolio update data is undefined!");
+            return;
+        }
+        try {
+            await api.projectManagement.updatePortfolio({ ...portfolio, ...updatedPortfolio });
+        } catch (error) {
+            console.error("Error updating portfolio:", error);
+        }
+    };
+    
 
     return (
         <div className="portfolio">
