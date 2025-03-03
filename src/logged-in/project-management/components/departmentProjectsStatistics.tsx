@@ -121,7 +121,7 @@ const DepartmentProjectStatistics: FC = observer(() => {
                     <GanttChartAction onViewListChange={setIsChecked} onViewModeChange={viewMode => setView(viewMode)} isChecked={isChecked} />
                     <br />
                     <div className="gannt-chart">
-                        {/* {!!projectTimeline.length &&
+                        {!!projectTimeline.length &&
                             <Gantt
                                 tasks={projectTimeline}
                                 viewMode={view}
@@ -129,7 +129,7 @@ const DepartmentProjectStatistics: FC = observer(() => {
                                 // ganttHeight={300}
                                 columnWidth={columnWidth}
                             />
-                        } */}
+                        }
                     </div>
                 </div>
             </div>
