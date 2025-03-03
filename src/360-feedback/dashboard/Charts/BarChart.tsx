@@ -14,6 +14,7 @@ const BarChart = () => {
   const [leadershipRatings, setLeadershipRatings] = useState<
     ILeadershipRating[]
   >([]);
+
   const [description, setDescription] = useState("");
   const [chartSeries, setChartSeries] = useState<number[]>([]);
 

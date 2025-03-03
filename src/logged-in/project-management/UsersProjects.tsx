@@ -52,6 +52,12 @@ const UserProjects = observer(() => {
         value: portfolio.asJson.id,
     }));
 
+    function getPortfolioNameById(portfolioId: string): string | undefined {
+        const portfolio = store.portfolio.all.find((portfolio) => portfolio.asJson.id === portfolioId);
+        return portfolio?.asJson.portfolioName;
+    }
+    
+
     const handleNewProject = () => {
         store.projectManagement.clearSelected()
         showModalFromId(MODAL_NAMES.PROJECTS.CREATE_PROJECT);
@@ -214,7 +220,7 @@ const UserProjects = observer(() => {
                                     <span>{project.status}</span>&nbsp;
                                 </div>
 
-                                <button className={`card-badge ${project.status}`} data-uk-tooltip="Edit" type="button" onClick={() => quickProjectUpdate(project)}>
+                                <button className={`card-badge ${project.status}`} data-uk-tooltip="Edit Project" type="button" onClick={() => quickProjectUpdate(project)}>
                                     <span uk-icon="icon:more; ratio: .5"></span>
                                 </button>
 
@@ -303,7 +309,8 @@ const UserProjects = observer(() => {
                                                 options={portfolioOptions}
                                                 width="100%"
                                                 onChange={(value) => setSelectedProject({ ...selectedProject, portfolioId: value })}
-                                                placeholder={selectedProject.portfolioId}
+                                                placeholder={getPortfolioNameById(selectedProject.portfolioId) || "Select Portfolio"}
+
                                             />
                                         </div>
 

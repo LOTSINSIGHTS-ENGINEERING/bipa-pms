@@ -10,7 +10,7 @@ import { defaultTask, IProjectTask, IProjectTaskStatus } from "../../../shared/m
 
 import MODAL_NAMES from "../ModalName";
 import { getUsersEmail } from "../../project-management/utils/common";
-import { MAIL_EMAIL } from "../../../shared/functions/mailMessages";
+import { MAIL_EMAIL, MAIL_PROJECT_TASK_ADDED } from "../../../shared/functions/mailMessages";
 
 interface IProps {
   projectId: string;
@@ -46,20 +46,23 @@ const NewTaskModal: FC<IProps> = observer(({ projectId }) => {
       usersId: [me.uid, ...task.usersId],
       milestoneId: milestoneId,
       projectId: projectId,
-    }
+    };
+    console.log("Submitting task:", _task); // Log the task being submitted
     await create(_task);
     setLoading(false);
     onCancel();
   };
-
+  
   const create = async (task: IProjectTask) => {
-
     try {
-      const projctName = store.projectManagement.getById(projectId)?.asJson.projectName;
-      const { MY_SUBJECT, MY_BODY } = MAIL_PROJECT_TASK_ADDED(me?.displayName, task.taskName, "task", projctName);
-
       await api.projectManagement.createTask(projectId, task);
-
+      const projctName = store.projectManagement.getById(projectId)?.asJson.projectName;
+      const DEV_MODE = !process.env.NODE_ENV || process.env.NODE_ENV === "development"
+      if (!DEV_MODE && !task.usersId) return;
+      const { MY_SUBJECT, MY_BODY } = MAIL_PROJECT_TASK_ADDED(me.displayName, task.taskName, "task");
+  
+   
+  
       const emails = getUsersEmail(task.usersId.filter(id => id !== me?.uid), store);
       await api.mail.sendMail(
         emails,
@@ -68,9 +71,11 @@ const NewTaskModal: FC<IProps> = observer(({ projectId }) => {
         MY_SUBJECT,
         MY_BODY
       );
-    } catch (error) { }
+    } catch (error) {
+      console.error("Error creating task:", error); // Log the error
+    }
   };
-
+  
   const onCancel = () => {
     setTask(defaultTask)
     hideModalFromId(MODAL_NAMES.PROJECTS.CREATE_TASK);
@@ -103,15 +108,22 @@ const NewTaskModal: FC<IProps> = observer(({ projectId }) => {
             </div>
             <div className="uk-margin uk-margin-right uk-width-1-1">
               <label className="uk-form-label" htmlFor="portfolio">Assign task to:</label>
-              <select className="uk-select uk-form-small"
-                aria-label="Select"
-                onChange={(value: any) => setTask({ ...task, usersId: value.map((t: any) => t.value) })}
-              >
-                <option value={""}>None</option>
-                {options.map((option, index) => (
-                  <option key={index} value={option.value}>{option.label}</option>
-                ))}
-              </select>
+              <select
+  className="uk-select uk-form-small"
+  aria-label="Select"
+  onChange={(event) => {
+    const selectedValue = event.target.value;
+    setTask({ ...task, usersId: selectedValue ? [selectedValue] : [] }); // Store the selected value in an array
+  }}
+>
+  <option value={""} disabled>None</option>
+  {options.map((option, index) => (
+    <option key={index} value={option.value}>{option.label}</option>
+  ))}
+</select>
+
+
+
             </div>
             <div className="uk-margin">
               <label className="uk-form-label" htmlFor="progress">Dependencies (Tasks)</label>
@@ -177,7 +189,7 @@ const NewTaskModal: FC<IProps> = observer(({ projectId }) => {
 });
 
 export default NewTaskModal;
-function MAIL_PROJECT_TASK_ADDED(displayName: string | null | undefined, taskName: string, arg2: string, projctName: string | undefined): { MY_SUBJECT: any; MY_BODY: any; } {
-  throw new Error("Function not implemented.");
-}
+
+
+
 

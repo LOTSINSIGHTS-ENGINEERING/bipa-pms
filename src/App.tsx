@@ -65,6 +65,7 @@ import FeedbackReviewHome from "./360-feedback/feed-back-review/FeedBackReviewHo
 import FeedbackReview360 from "./360-feedback/feed-back-review/FeedbackReview360";
 import Questionnaire from "./360-feedback/questionnaire/questionnaire";
 import PrivateMessage from "./360-feedback/communication/messages";
+import AuditTrailPage from "./logged-in/project-management/AuditTrailPage";
 
 // Lazy load components
 const LoggedIn = lazy(() => import("./logged-in/LoggedIn"));
@@ -183,6 +184,7 @@ const DEV_MODE_ROUTES = () => {
           <Route path="projects" element={<UserProjects />} />
           <Route path="projects/:id" element={<PortfolioProjects />} />
           <Route path="project/:projectId" element={<ProjectView />} />
+          <Route path="audit-trail/:projectId" element={<AuditTrailPage/>} />
           <Route path="portfolio" element={<PortfolioPage />} />
           <Route path="tasks" element={<Tasks />} />
           <Route path="checkin" element={<CheckIn />} />
