@@ -23,6 +23,9 @@ export function ganttChartProjects(projects: IProject[]): Task | any {
     });
 }
 
+
+
+
 export function ganttChartTasks(tasks: IProjectTask[], store: AppStore): Task | any {
     const projects = store.projectManagement.all.map((p) => p.asJson).map((project) => {
         const { startDate, endDate, projectName, id, ...all } = project;

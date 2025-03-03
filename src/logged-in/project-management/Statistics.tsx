@@ -41,9 +41,9 @@ const Statistics = observer(() => {
             <ProjectStatisticsTabs selectedTab={selectedTab} setselectedTab={setselectedTab} />
             <div className="content">
                 {selectedTab === "company-tab" && <CompanyProjectStatistics />}
-                {/* {selectedTab === "department-tab" && <DepartmentProjectStatistics />}
+                {selectedTab === "department-tab" && <DepartmentProjectStatistics />}
                 {selectedTab === "individual-tab" && <IndividualProjectStatistics />}
-                {selectedTab === "project-tab" && <ProjectStatistics />} */}
+                {selectedTab === "project-tab" && <ProjectStatistics />}
             </div>
         </div>
 
