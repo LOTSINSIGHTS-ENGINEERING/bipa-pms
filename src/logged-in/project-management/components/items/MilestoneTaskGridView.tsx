@@ -183,7 +183,12 @@ export const MilestineTaskGridView = (props: IGridProps) => {
                                             onChange={(e) => setSelectedTask({ ...selectedTask, description: e.target.value })}
                                         />
                                     </div>
+                                    <button className="save-project-button" onClick={() => handleUpdateTask(task)}
+                                                type="button">
+                                                <span>Save</span>
+                                                </button>
                                 </div>
+                                
                             </div>
                             <hr className="uk-divider" />
                             <div>
