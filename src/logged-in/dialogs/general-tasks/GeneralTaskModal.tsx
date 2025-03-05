@@ -1,85 +1,70 @@
 import { observer } from "mobx-react-lite";
-import { FC, FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import { IOption } from "../../../shared/components/single-select/SingleSelect";
 import { useAppContext } from "../../../shared/functions/Context";
-
 import { hideModalFromId } from "../../../shared/functions/ModalShow";
-import { defaultTask, IProjectTask, IProjectTaskStatus } from "../../../shared/models/ProjectTasks";
+import { defaultGeneralTask, IGeneralTask } from "../../../shared/models/GeneralTasks";
 
 import MODAL_NAMES from "../ModalName";
-import { getUsersEmail } from "../../project-management/utils/common";
-import { MAIL_EMAIL, MAIL_PROJECT_TASK_ADDED } from "../../../shared/functions/mailMessages";
+import { IProjectTaskStatus } from "../../../shared/models/ProjectTasks";
 
-interface IProps {
-  projectId: string;
-}
-const NewTaskModal: FC<IProps> = observer(({ projectId }) => {
-
+const GeneralTaskModal = observer(() => {
   const animatedComponents = makeAnimated();
   const { api, store } = useAppContext();
   const me = store.auth.meJson;
 
-  const milestoneId = store.projectTask.selectedMID;
-  const tasksOptions = store.projectTask.all.map(t => t.asJson).filter(t => t.milestoneId === milestoneId).map(task => ({ value: task.id, label: task.taskName }));
-
-  const options: IOption[] = useMemo(() =>
-    store.user.all.map((user) => {
-      return {
-        label: user.asJson.displayName || "",
-        value: user.asJson.uid
-      };
-    }).filter(user => user.value !== me?.uid),
-    [store.user]
-  );
-
-  const [task, setTask] = useState<IProjectTask>(defaultTask);
+  const [task, setTask] = useState<IGeneralTask>({ ...defaultGeneralTask })
   const [loading, setLoading] = useState(false);
+
+  const users = store.user.all.map(u => u.asJson).map(user => ({
+    value: user.uid,
+    label: user.displayName
+  })).filter(user => user.value !== me?.uid);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     if (!me) return;
-    const _task: IProjectTask = {
+    const _task: IGeneralTask = {
       ...task,
       usersId: [me.uid, ...task.usersId],
-      milestoneId: milestoneId,
-      projectId: projectId,
-    };
-    console.log("Submitting task:", _task); // Log the task being submitted
-    await create(_task);
+      uid: me.uid,
+      departmentId: me.department,
+    }
+
+    if (store.generalTask.selected)
+      await update(_task);
+    else await create(_task)
+
     setLoading(false);
     onCancel();
   };
-  
-  const create = async (task: IProjectTask) => {
+
+
+  const create = async (task: IGeneralTask) => {
     try {
-      await api.projectManagement.createTask(projectId, task);
-      const projctName = store.projectManagement.getById(projectId)?.asJson.projectName;
-      const DEV_MODE = !process.env.NODE_ENV || process.env.NODE_ENV === "development"
-      if (!DEV_MODE && !task.usersId) return;
-      const { MY_SUBJECT, MY_BODY } = MAIL_PROJECT_TASK_ADDED(me.displayName, task.taskName, "task");
-  
-   
-  
-      const emails = getUsersEmail(task.usersId.filter(id => id !== me?.uid), store);
-      await api.mail.sendMail(
-        emails,
-        MAIL_EMAIL,
-        [me?.email!],
-        MY_SUBJECT,
-        MY_BODY
-      );
-    } catch (error) {
-      console.error("Error creating task:", error); // Log the error
-    }
+      await api.generalTask.createTask(task);
+    } catch (error) { }
   };
-  
+
+  const update = async (task: IGeneralTask) => {
+    try {
+      await api.generalTask.updateTask(task);
+    } catch (error) { }
+  };
+
   const onCancel = () => {
-    setTask(defaultTask)
-    hideModalFromId(MODAL_NAMES.PROJECTS.CREATE_TASK);
+    setTask({ ...defaultGeneralTask })
+    hideModalFromId(MODAL_NAMES.GENERAL_TASKS.CREATE_GENERAL_TASK);
   };
+
+  useEffect(() => {
+    if (store.generalTask.selected) {
+      setTask(store.generalTask.selected);
+    }
+    setTask({ ...defaultGeneralTask })
+  }, [store.generalTask.selected]);
 
   return (
     <div className="user-modal uk-modal-dialog uk-modal-body uk-margin-auto-vertical" data-uk-overflow-auto>
@@ -106,36 +91,17 @@ const NewTaskModal: FC<IProps> = observer(({ projectId }) => {
                 <option value={"done"}>Done</option>
               </select>
             </div>
-            <div className="uk-margin uk-margin-right uk-width-1-1">
-              <label className="uk-form-label" htmlFor="portfolio">Assign task to:</label>
-              <select
-  className="uk-select uk-form-small"
-  aria-label="Select"
-  onChange={(event) => {
-    const selectedValue = event.target.value;
-    setTask({ ...task, usersId: selectedValue ? [selectedValue] : [] }); // Store the selected value in an array
-  }}
->
-  <option value={""} disabled>None</option>
-  {options.map((option, index) => (
-    <option key={index} value={option.value}>{option.label}</option>
-  ))}
-</select>
-
-
-
-            </div>
             <div className="uk-margin">
-              <label className="uk-form-label" htmlFor="progress">Dependencies (Tasks)</label>
+              <label className="uk-form-label" htmlFor="portfolio">Select task members</label>
               <Select
                 closeMenuOnSelect={false}
                 components={animatedComponents}
-                onChange={(value: any) => setTask({ ...task, dependencies: value.map((t: any) => t.value) })}
+                onChange={(value: any) => setTask({ ...task, usersId: value.map((t: any) => t.value) })}
                 isMulti
-                options={tasksOptions}
+                placeholder="Search user"
+                options={users}
               />
             </div>
-
             <div className="uk-margin">
               <label className="uk-form-label" htmlFor="start">Start Date</label>
               <input id="start"
@@ -154,15 +120,12 @@ const NewTaskModal: FC<IProps> = observer(({ projectId }) => {
                 placeholder="End Date"
                 onChange={(e) => setTask({ ...task, endDate: e.target.value })} />
             </div>
-
             <div className="uk-margin">
               <textarea
                 className="uk-textarea"
                 rows={2}
-                required
                 placeholder="Description"
                 onChange={(e) => setTask({ ...task, description: e.target.value })}>
-
               </textarea>
             </div>
           </fieldset>
@@ -188,8 +151,4 @@ const NewTaskModal: FC<IProps> = observer(({ projectId }) => {
   );
 });
 
-export default NewTaskModal;
-
-
-
-
+export default GeneralTaskModal;

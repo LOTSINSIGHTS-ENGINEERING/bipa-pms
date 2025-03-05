@@ -20,6 +20,8 @@ import Toolbar from '../shared/components/toolbar/Toolbar';
 import { IProjectTask } from '../../shared/models/ProjectTasks';
 import "./styles/tasks.style.scss";
 import "gantt-task-react/dist/index.css";
+import GeneralTaskModal from '../dialogs/general-tasks/GeneralTaskModal';
+import ViewGeneralTaskModal from '../dialogs/general-tasks/ViewGeneralTaskModal';
 
 const Tasks = observer(() => {
     useTitle("Tasks");
@@ -368,10 +370,10 @@ const Tasks = observer(() => {
                         </div>
                         <ErrorBoundary>
                             <Modal modalId={MODAL_NAMES.GENERAL_TASKS.CREATE_GENERAL_TASK}>
-                                {/* <GeneralTaskModal /> */}
+                                <GeneralTaskModal />
                             </Modal>
                             <Modal modalId={MODAL_NAMES.GENERAL_TASKS.VIEW_GENERAL_TASKS}>
-                                {/* <ViewGeneralTaskModal /> */}
+                                <ViewGeneralTaskModal />
                             </Modal>
                         </ErrorBoundary>
                     </ErrorBoundary>

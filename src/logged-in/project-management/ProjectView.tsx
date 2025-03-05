@@ -44,6 +44,7 @@ const ProjectView = observer(() => {
     const [loadingData, setLoadingData] = useState(false);
     const [loading, setLoading] = useState(false);
     const [deletingLog, setDeletingLog] = useState(false);
+    
 
     const me = store.auth.meJson;
     const navigate = useNavigate();
@@ -121,18 +122,35 @@ const ProjectView = observer(() => {
         } catch (error) { }
     };
     const loadProjectLog = async () => {
-
+        console.log("id", project.id); // Check project.id
+    
         if (firstRenderRef.current) {
-            setLoadingData(true)
-            await api.projectManagement.getProjectLogs(project.id);
-            firstRenderRef.current = false;
-            setLoadingData(false)
-            setVisible(true)
+            try {
+                setLoadingData(true);
+                console.log("Fetching project logs...");
+                const result = await api.projectManagement.getProjectLogs(project.id);
+                console.log("Fetched logs:", result);  // Log the fetched logs
+            } catch (error) {
+                console.error("Failed to load project logs", error);
+            } finally {
+                firstRenderRef.current = false;
+                setLoadingData(false);
+                setVisible(true);
+            }
         } else {
-            setVisible(true)
+            setVisible(true);
         }
     };
+    
+    const handleViewAuditTrail = () => {
+        loadProjectLog();  // Fetch logs before navigation
+        // Using navigate for navigation and passing logs as state
+        navigate(`/c/audit-trail/${project.id}`, { state: { logs: logs } });
+    };
 
+    useEffect(() => {
+        loadProjectLog();  // Call when component is mounted or projectId changes
+    }, [project.id]);
     // const deleteProjectLog = async () => {
     //     if (!window.confirm(`Are you sure you want to delete all actions`)) return;
     //     setDeletingLog(true)
@@ -386,7 +404,7 @@ const ProjectView = observer(() => {
                                 </button>
                             </div>
                             <div className="project-btn">
-                                <button type="button" onClick={loadProjectLog}>
+                                <button type="button" onClick={handleViewAuditTrail}>
                                     <span>Audit Trail</span>
                                 </button>
                             </div>

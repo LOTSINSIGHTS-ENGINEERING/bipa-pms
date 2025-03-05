@@ -21,7 +21,8 @@ export const defaultGeneralTask: IGeneralTask = {
     actualAmount: 0,
     uid: "",
     files: [],
-    comments: []
+    comments: [],
+    departmentId: ""
 }
 
 export interface IGeneralTask {
@@ -43,6 +44,7 @@ export interface IGeneralTask {
     dependencies?: string[],
     files: ITaskFile[];
     usersId: string[];
+    departmentId:string
 }
 
 export interface ITaskFile {

@@ -15,6 +15,7 @@ import { moneyFormat } from "../utils/formats";
 import GanttChartAction from "./ganttViewActions";
 import "gantt-task-react/dist/index.css";
 import "../styles/statistics.style.scss";
+import { log } from "console";
 // import { Doughnut } from "react-chartjs-2";
 
 
@@ -59,10 +60,13 @@ const CompanyProjectStatistics = observer(() => {
         if (selectedValue === "all") return project;
         else if (project.department === selectedValue) return project;
     });
+    console.log("projects",projects);
+    
 
     const milestones = store.projectTask.all.map(task => task.asJson);
     const { status, completionRate } = projectProjectStatistics(projects);
     const projectTimeline: Task[] = ganttChartProjects(projects);
+    
     const projectBudget = projectTotalBudget(projects);
     const milestoneBudget = projectsMilestonesTotal(milestones);
     const remainingAmount = projectBudget - milestoneBudget;
@@ -159,7 +163,7 @@ const CompanyProjectStatistics = observer(() => {
                     <GanttChartAction onViewListChange={setIsChecked} onViewModeChange={viewMode => setView(viewMode)} isChecked={isChecked} />
                     <br />
                     <div className="gannt-chart">
-                        {!!projectTimeline.length &&
+                        {/* {!projectTimeline.length &&
                             <Gantt
                                 tasks={projectTimeline}
                                 viewMode={view}
@@ -167,7 +171,7 @@ const CompanyProjectStatistics = observer(() => {
                                 // ganttHeight={300}
                                 columnWidth={columnWidth}
                             />
-                        }
+                        } */}
                     </div>
                 </div>
             </div>
