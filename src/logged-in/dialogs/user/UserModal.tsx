@@ -84,7 +84,7 @@ const UserModal = observer(() => {
 
           <div className="uk-width-1-1 uk-text-right">
             <button
-              className="btn-text uk-margin-right"
+              className="btn-text btn-danger uk-margin-right"
               type="button"
               onClick={onCancel}
             >
